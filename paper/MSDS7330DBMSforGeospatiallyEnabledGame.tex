@@ -83,6 +83,58 @@ Layout of all three components are represented schematically in \autoref{schema}
 \label{schema}
 \end{figure}
 
+\section{Choice of database}
+\subsection{Representing GPS location data}
+
+An important aspect when dealing with GPS location data is how to represent the data efficiently in order to reduce network traffic and storage requirements. A geospatial location is defined by its latitude and longitude coordinates. There are different formats in which these coordinates can be represented. The most common format for many applications (such as Google Maps and Geographical Information Systems or GIS) is the signed degrees format. The rules for this formatting are as follows:
+\begin{itemize}
+\item Latitudes range from -90 to 90, and longitudes from -180 to 180. 
+\item South latitudes and West longitudes are preceded by a minus sign.
+\item The format uses decimal places, which give the desired amount of precision. 
+\end{itemize}
+
+For example, the location of the American Airlines Center in Dallas is 32.78766352 (North Latitude) and  -96.80616344 (West Longitude).
+
+We have two main options to represent the data in the database:
+Option 1. Using the latitude and longitude data as two separate attributes, formatting them as decimal numbers, accommodating enough digits to hold the level of precision we require from the locations. 
+Option 2. Using Spatial Data Types. An alternative to use numeric values for latitude and longitude is to use spatial data type, which uses the POINT type for coordinates, and geometries to represent coordinate space. This data type is specified based on the OpenGIS specification, and it has X and Y coordinate values with no separating comma: POINT (X Y). 
+
+\subsection{Frequency of updating} 
+
+For the purpose of supporting the gameplay, it is important to update player’s locations when they move to a new destination where collectible objects are available. While visiting tourist destinations, people travel at widely varying speeds depending on whether they are walking, riding a bike, driving, on a train, etc. Also, if there might be different locations close to each other. Therefore, it is important for people travelling at higher speeds or that are in areas with many destinations close to each other to update their location more frequently. 
+
+Ideally, we should build a function to trigger an update after the person has moved to a new location, or some time has passed. The time threshold should not be too small to avoid many meaningless updates from non-moving people. For practical purposes, we could set the distance threshold to 50 meters and the time threshold to 5 minutes. This could change, however, depending on how the gameplay is further defined.  
+
+It is important to create a database system that can ensure the consistency and accuracy of the data even when the information of many closely-located players is been updated frequently. 
+
+\subsection{Location Accuracy} 
+
+As we discussed above, latitude and longitude are more precise when they use more decimals. Using 8 decimal places would give an exact location within 1 millimeter. This could present some challenges due to the increasing volume of data stored required by the higher precision. Our project does not require this type of precision, but it needs to be sufficiently precise to identify different locations within one building. A precision of around 10 meters could be enough. This could be achieved by using 4 or 5 decimal places for our data. 
+
+This information is important because it will determine, along with the number of players, how much data is stored in the database. If the amount is very large, some sort of data compression would be necessary.
+
+\subsection{Database Options}
+
+\begin{enumerate}
+
+\item MySQL: As explained above, a MySQL database will be able to support geospatial data, using either a numeric or a spatial format. The major advantages of using it would be our own familiarity with the interface, and its open source nature. A major limitation could be that it only supports B+ Trees, which could impose restrictions to the storage and indexing of the data, an important component of the project. 
+
+\item PostgreSQL: PostGIS is a spatial database extender for PostgreSQL object-relational database. It adds support for geographic objects allowing location queries to be run in SQL. The three features that PostGIS delivers to PostgreSQL DBMS are spatial types, indexes and functions such as distance, area, union, intersection, and specialty geometry. This spatial database stores and manipulates spatial objects like any other object in the database. With support for different geometry types, the PostGIS spatial database allows querying and managing information about locations and mapping.
+
+\item MongoDB: MongoDB is a document database with an expressive query language, support for secondary indexes and easy accommodation of changes in applications. The dynamic document data model of MongoDB removes the need for a central catalog describing the structure of documents. Every document is self-describing by defining the field names internally, which comes at the cost of greater use of space. Data is stored in the BSON format, a binary encoding of JSON, which does not compress data. 
+Regarding location data, MongoDB offers geospatial indexes), which allows location data to be efficiently retrieved based on longitude and latitude. Such an index is useful only if records contain other fields beside location.
+ 
+\item Cassandra: Another popular NoSQL database is Cassandra. According to our research, however, the development of geospatial data indexing and retrieval features has been lacking for this database.  Recent research show how geohashing techniques can be used to index store data, converting the latitude/longitude information to a numeric geohash attribute and associating it to the data when being stored. However, this might make this database less attractive than the first option. 
+
+\end{enumerate}
+
+We will build a database based on the open-sourced PostgreSQL database, integrating the capabilities of the PostGIS extension. Apart from the aforementioned advantages of using these tools, our research indicates that PostGIS is close to becoming the standard to manage geolocation data for SQL databases.  This will allow us to build a database with the following capabilities:
+\begin{itemize}
+\item	Once the data is uploaded, use simple SQL language to run complex queries related locations, objects, and other spatial data. 
+\item Scale out the database in various ways: a. Manage a very large data size because it offers multi-TB capabilities, b. Handle a large amount of concurrency from the data, c. Use table-partitioning to break large data sets down into more manageable pieces.
+\item Build custom functions using a language such as Python or R, which will be very useful to program the game requirements, rules and mechanisms into the database. 
+\end{itemize}
+
 \section{Database design}
 TBD
 \section{Conclusion}
@@ -120,6 +172,9 @@ Jensen, C., Christensen, A., Pedersen, T., Pfoser, D.,Saltenis, S. and Tryfona, 
 
 \bibitem{massive-amounts-location-data}
 K. Midtgård. Collecting massive amounts of location data in a NoSQL database. Master of Science in Computer Science, Norwegian University of Science and Technology, 2017
+
+\bibitem {PostGIS scale}
+Ramsey, Pau (2017)l. Scaling PostgreSQL and PostGIS, Dec 2017. URL: http://blog.cleverelephant.ca/2017/12/postgis-scaling.html
 
 \end{thebibliography}
 
