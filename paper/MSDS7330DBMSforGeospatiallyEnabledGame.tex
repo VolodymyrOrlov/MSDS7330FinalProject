@@ -4,6 +4,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{enumitem}
 
 \begin{document}
 \title{A Database Management System for a Geospatially-Enabled Interactive Game}
@@ -58,18 +59,18 @@ An interesting paper by Chulmo Koo and others investigate relationship between g
 \section{High-level description of the system}
 In order to be able to serve big number of requests in a timely manner and scale well with increasing number of players we need a system that will not only have a well designed, scalable database, but also other components integrated into a single, well thought architecture. Our system is built from 3 major components:
 
-\begin{itemize}
+\begin{enumerate}
   \item Client-side application. We decided to support 2 major platforms that got widespread adoption: Android and iOS. For the proof-of-concept we focused on iOS. 
   \item Backend services, or middle layer. This component performs server-side operations, enforces gameplay rules and handles requests to our database. 
   \item Geospatially enabled database. Here all information regarding our players, tokens and corresponding states is being kept. 
-\end{itemize}
+\end{enumerate}
 
 We use following communication protocols between these components:
 
-\begin{itemize}
+\begin{enumerate}[label=\Alph*]
 \item REST over HTTP. 
 \item SQL 
-\end{itemize}
+\end{enumerate}
 
 On the client side we use Apple’s Core Location Framework to collect longitude and latitude of a player and Apple’s ARKit to place tokens around player. We calculate bearing and distance between player and a token to place tokens around given user. To uniquely identify each player we use Vendor ID.
 We want our backend to support large number of requests coming from multiple players. To achieve that we use multiple copies of the identical services capable to scale up or down depending on the level of load. Luckily we do not have to think about scalability properties of our hardware since we run our services in AWS Cloud on EC2 virtual instances.  To spread load across multiple copies of the backend service we use AWS load balancer that distributes client’s requests in a round-robin fashion between EC2 instances. 
