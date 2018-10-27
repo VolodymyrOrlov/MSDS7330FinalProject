@@ -66,3 +66,12 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# LaTex
+paper/*.log
+paper/*.out
+paper/*.synctex.*
+paper/*.aux
+
+# OS
+.DS_Store
