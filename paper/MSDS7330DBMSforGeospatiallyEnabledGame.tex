@@ -142,7 +142,7 @@ We will build a database based on the open-sourced PostgreSQL database, integrat
 
 The important entities that the database must be store are player data, story-segments, token-category properties and token locations. As developers, we also need to know a player’s score in order to know what story segments the player has earned. Similarly, we need to know what tokens have already been collected in order to not allow the player to collect them again. 
 
-Player information, story segment information, and information about the five categories of tokens can be stored in their own tables. There will be a central table that links these various entities via a Game-ID. This in anticipation that we may want to tell two stories in the same cities. A list of geospatial points that correspond to viable latitudes and longitudes that can be used for any particular game will be stored separately from the list of geospatial points actually available to the player. This will allow us to update the list and properties of physical geospatial points without affecting existing games and applications. A diagram of the database schema can be found below in \autoref{ERD}. 
+Player information, story segment information, and information about the five categories of tokens can be stored in their own tables. There will be a central table that links these various entities via a Game-ID. This in anticipation that we may want to tell two stories in the same city. A list of geospatial points that correspond to viable latitudes and longitudes that can be used for any particular game will be stored separately from the list of geospatial points that are actually available to the player. This will allow us to update the list and properties of physical geospatial points without affecting existing games and applications. A diagram of the database schema can be found below in \autoref{ERD}. 
 
 \begin{figure}[H]
 \centering
@@ -151,7 +151,14 @@ Player information, story segment information, and information about the five ca
 \label{ERD}
 \end{figure}
 
-One major consideration in choice of database schema is to what extent the game may be housed on the player’s phone and what may be streamed from the central database. The former makes data integrity more feasible while the latter makes the storage of the player’s progress more feasible. For example, knowing what tokens the player has already collected entails storing information that depends on both the player base and all of the tokens’ geospatial locations. Hence, it merits its own table the size of the number of players times the number of token locations.  As the player base increases and the game is expanded, this table will grow very rapidly in size. However, if the player holds the token locations portion of the database on his or her phone, then the information may simply be stored as an indicator on the player’s downloaded schema. 
+One major consideration in choice of database schema is to what extent the game may be housed on the player’s phone and what may be streamed from the central database. The former makes data integrity more feasible while the latter makes the storage of the player’s progress more feasible. For example, knowing what tokens the player has already collected entails storing information that depends on both the player base and all of the tokens’ geospatial locations. Hence, it merits its own table the size of the number of players times the number of token locations.  As the player base increases and the game is expanded, this table will grow very rapidly in size. However, if the player holds the token locations portion of the database on his or her phone, then the information may simply be stored as an indicator on the player’s downloaded schema. An example of the schema that can be saved on the player's phone lies below in\autoref{ERDUser}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=2.7in]{imgs/MSDS7330_FinalProj_Prelim_ER2_USER.png}
+\caption{ER Diagram of Database on User End}
+\label{ERDUser}
+\end{figure}
 
 
 \section{Conclusion}
