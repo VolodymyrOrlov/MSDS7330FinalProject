@@ -3,6 +3,7 @@ import SceneKit
 import ARKit
 import CoreLocation
 import AVFoundation
+import RealmSwift
 
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
     
@@ -11,6 +12,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     var audioPlayer = AVAudioPlayer()
     
     var tokens = [Token]()
+    
+    let realm: Realm = try! Realm()
+    
+    let server = Server(baseURL: "http://192.168.1.68:5000/api/v1")
     
     var score: Int = 0 {
         didSet {
@@ -93,7 +98,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         tokens.append(Token(37.309260, -121.976377))
         tokens.append(Token(37.309146, -121.975958))
         
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        
+        let user = User.getOrCreate(id: deviceID, realm: realm)
+        
+        user.save(realm: realm)
+        
+        server.updateUser(user)
+        
         updateStatusText()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
