@@ -14,7 +14,7 @@ import simplejson
 
 app = Flask(__name__)
 
-connection = psycopg2.connect("dbname='postgres' user='vorl' host='localhost' password='' port='5432'")
+connection = psycopg2.connect("dbname='postgres' user='postgres' host='localhost' password='' port='5432'")
 
 # postgres   
 ########################################################################3
@@ -61,7 +61,7 @@ def user_registration():
 					return "'{}'".format(v)
 
 			keys = [k for k in datauser.keys() if k != 'userid']
-			sql = """update userdata set {}""".format(', '.join(map(lambda k: k + '=' + type_format(datauser[k]), keys)))
+			sql = """update userdata set {} where userid = '{}'""".format(', '.join(map(lambda k: k + '=' + type_format(datauser[k]), keys)), datauser['userid'])
 			print(sql)
 			cursor.execute(sql)
 			connection.commit()
@@ -281,7 +281,7 @@ def collection_reg():
 
 ## Starts the server for serving Rest Services 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='192.168.1.68', debug=True)
 
 
 #SELECT Store_Number, store_name, StreetAddress, ST_Distance(geom, ref_geom) AS distance,story.storyname,site.siteid, seg.segmentcategory

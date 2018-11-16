@@ -22,13 +22,13 @@ class Server {
             return
         }
         
-        guard let endpointUrl = URL(string: "\(baseURL)/test-endpoint?id=\(user.id)") else {
+        guard let endpointUrl = URL(string: "\(baseURL)/user") else {
             return
         }
         
         var json = [String:Any]()
-        json["uid"] = user.id
-        json["name"] = user.name
+        json["userid"] = user.id
+        json["firstname"] = user.name
         
         do {
         

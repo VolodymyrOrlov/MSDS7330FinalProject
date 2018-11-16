@@ -14,7 +14,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var playerName: UITextField!
     
     let realm: Realm = try! Realm()
-    let server = Server(baseURL: "http://192.168.1.68:5000/api/v1")
+    let server = Server(baseURL: "http://192.168.1.68:5000/api/game")
     
     private var user: User!
 

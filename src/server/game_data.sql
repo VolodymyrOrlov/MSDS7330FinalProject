@@ -8,52 +8,63 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
+DROP SCHEMA if exists topology CASCADE;
+DROP TABLE IF EXISTS geopointslocation cascade;
+DROP TABLE IF EXISTS object cascade;
+DROP TABLE IF EXISTS objectlocation cascade;
+DROP TABLE IF EXISTS segment cascade;
+DROP TABLE IF EXISTS sitelocation cascade;
+DROP TABLE IF EXISTS story cascade;
+DROP TABLE IF EXISTS templocation cascade;
+DROP VIEW IF EXISTS testpoint cascade;
+DROP TABLE IF EXISTS totalgamescore cascade;
+DROP TABLE IF EXISTS userdata cascade;
+
 --
 -- Name: topology; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
-CREATE SCHEMA topology;
-
+CREATE SCHEMA IF NOT EXISTS topology;
 
 ALTER SCHEMA topology OWNER TO postgres;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: postgis; Type: EXTENSION; Schema: -; Owner: 
+-- Name: postgis; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA public;
 
 
 --
--- Name: EXTENSION postgis; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION postgis; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION postgis IS 'PostGIS geometry, geography, and raster spatial types and functions';
 
 
 --
--- Name: postgis_topology; Type: EXTENSION; Schema: -; Owner: 
+-- Name: postgis_topology; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS postgis_topology WITH SCHEMA topology;
 
 
 --
--- Name: EXTENSION postgis_topology; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION postgis_topology; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION postgis_topology IS 'PostGIS topology spatial types and functions';
@@ -66,7 +77,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: geopointslocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: geopointslocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE geopointslocation (
@@ -79,7 +90,7 @@ CREATE TABLE geopointslocation (
 ALTER TABLE public.geopointslocation OWNER TO postgres;
 
 --
--- Name: object; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: object; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE object (
@@ -92,7 +103,7 @@ CREATE TABLE object (
 ALTER TABLE public.object OWNER TO postgres;
 
 --
--- Name: objectlocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: objectlocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE objectlocation (
@@ -106,7 +117,7 @@ CREATE TABLE objectlocation (
 ALTER TABLE public.objectlocation OWNER TO postgres;
 
 --
--- Name: segment; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: segment; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE segment (
@@ -121,7 +132,7 @@ CREATE TABLE segment (
 ALTER TABLE public.segment OWNER TO postgres;
 
 --
--- Name: sitelocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: sitelocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE sitelocation (
@@ -142,7 +153,7 @@ CREATE TABLE sitelocation (
 ALTER TABLE public.sitelocation OWNER TO postgres;
 
 --
--- Name: story; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: story; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE story (
@@ -155,11 +166,11 @@ CREATE TABLE story (
 ALTER TABLE public.story OWNER TO postgres;
 
 --
--- Name: templocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: templocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE templocation (
-    userid character varying(30) NOT NULL,
+    userid character varying(255) NOT NULL,
     longtitude double precision,
     latitude double precision
 );
@@ -178,11 +189,11 @@ CREATE VIEW testpoint AS
 ALTER TABLE public.testpoint OWNER TO postgres;
 
 --
--- Name: totalgamescore; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: totalgamescore; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE totalgamescore (
-    userid character varying(30) NOT NULL,
+    userid character varying(255) NOT NULL,
     storyid character varying(30) NOT NULL,
     userscore integer,
     scorecategory text NOT NULL,
@@ -194,11 +205,11 @@ CREATE TABLE totalgamescore (
 ALTER TABLE public.totalgamescore OWNER TO postgres;
 
 --
--- Name: userdata; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: userdata; Type: TABLE; Schema: public; Owner: postgres; Tablespace:
 --
 
 CREATE TABLE userdata (
-    userid character varying(30) NOT NULL,
+    userid character varying(255) NOT NULL,
     firstname text,
     score integer
 );

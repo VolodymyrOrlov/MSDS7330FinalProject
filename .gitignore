@@ -75,3 +75,6 @@ paper/*.aux
 
 # OS
 .DS_Store
+
+# IntelliJ
+.idea
