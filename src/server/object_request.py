@@ -14,16 +14,18 @@ import simplejson
 
 app = Flask(__name__)
 
+connection = psycopg2.connect("dbname='postgres' user='vorl' host='localhost' password='' port='5432'")
+
 # postgres   
 ########################################################################3
 # user  registration  
 ########################################################################################
-@app.route('/api/game/user_registration', methods=[ 'POST'])
+@app.route('/api/game/user', methods=[ 'POST'])
 def user_registration():
 	try:
 		datauser=request.get_json()
 		logging.warning("Connecting to DB")
-		connection = psycopg2.connect("dbname='game' user='postgres' host='localhost' password='nikon123' port='5432'")
+
 		cursor = connection.cursor()
 		logging.warning("Connection with DB established")	
 
@@ -51,9 +53,20 @@ def user_registration():
 			cursor.execute(create_string)
 			connection.commit()
 
-			message='new user added'
 		else:
-			message='user already exist'
+			def type_format(v):
+				if isinstance(v, float) or isinstance(v, int):
+					return v
+				else:
+					return "'{}'".format(v)
+
+			keys = [k for k in datauser.keys() if k != 'userid']
+			sql = """update userdata set {}""".format(', '.join(map(lambda k: k + '=' + type_format(datauser[k]), keys)))
+			print(sql)
+			cursor.execute(sql)
+			connection.commit()
+
+
 	except Exception as e:
 		print("Error [%r]" % (e))
 		sys.exit(1)
@@ -61,16 +74,17 @@ def user_registration():
 		if cursor:
 			cursor.close()
 
-	return jsonify({'Registration': message})
+	return ''
+
+
 ###################################################################################################
 # user current status
 ########################################################################################
-@app.route('/api/game/user_info/<userid>', methods=[ 'GET'])
+@app.route('/api/game/user/<userid>', methods=[ 'GET'])
 def user_info(userid):
 	try:
 		#datauser=request.get_json()
 		logging.warning("Connecting to DB")
-		connection = psycopg2.connect("dbname='game' user='postgres' host='localhost' password='nikon123' port='5432'")
 		cursor = connection.cursor()
 		logging.warning("Connection with DB established")	
 	
@@ -104,7 +118,6 @@ def getlocation():
 		datauser=request.get_json()
 		print (datauser)
 		logging.warning("Connecting to DB")
-		connection = psycopg2.connect("dbname='game' user='postgres' host='localhost' password='nikon123' port='5432'")
 		cursor = connection.cursor()
 		logging.warning("Connection with DB established")	
 		#check if userid exist	
@@ -145,6 +158,8 @@ def getlocation():
 			cursor.close()
 
 	return jsonify({'Report': message})
+
+
 ###################################################################################################
 # pull list tokens around
 ########################################################################################
@@ -154,7 +169,6 @@ def getlist(userid,r):
 	global query_result
 	try:
 		logging.warning("Connecting to DB")
-		connection = psycopg2.connect("dbname='game' user='postgres' host='localhost' password='nikon123' port='5432'")
 		cursor = connection.cursor()
 		logging.warning("Connection with DB established")
 
@@ -203,6 +217,7 @@ def getlist(userid,r):
 
 	return jsonify({'Token_List': query_result})
 
+
 ###################################################################################################
 # collection acception
 ########################################################################################
@@ -214,7 +229,6 @@ def collection_reg():
 		datauser=request.get_json()
 		print (datauser)
 		logging.warning("Connecting to DB")
-		connection = psycopg2.connect("dbname='game' user='postgres' host='localhost' password='nikon123' port='5432'")
 		cursor = connection.cursor()
 		logging.warning("Connection with DB established")	
 				
