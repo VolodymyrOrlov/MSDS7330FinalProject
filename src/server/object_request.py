@@ -11,6 +11,7 @@ import psycopg2
 from pprint import pprint
 import  plpygis
 import simplejson
+import psycopg2.extras
 
 app = Flask(__name__)
 
@@ -76,11 +77,32 @@ def user_registration():
 
 	return ''
 
+@app.route('/api/game/user/<userid>', methods=[ 'GET'])
+def user(userid):
+
+	cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
+	try:
+		cursor.execute("SELECT * FROM userdata WHERE userid=%s;" , [userid,])
+		rows = cursor.fetchall()
+		if not rows:
+			return '', 404
+		else:
+			return jsonify({'userid': rows[0]['userid'], 'name': rows[0]['firstname']})
+
+	except Exception as e:
+		print("Error [%r]" % (e))
+		sys.exit(1)
+	finally:
+		if cursor:
+			cursor.close()
+
+	return ''
+
 
 ###################################################################################################
 # user current status
 ########################################################################################
-@app.route('/api/game/user/<userid>', methods=[ 'GET'])
+@app.route('/api/game/user-score/<userid>', methods=[ 'GET'])
 def user_info(userid):
 	try:
 		#datauser=request.get_json()
@@ -112,52 +134,34 @@ def user_info(userid):
 ##########################################################################################################3	
 # location registration
 ########################################################################################
-@app.route('/api/game/getlocation', methods=['POST'])
-def getlocation():
+@app.route('/api/game/location/<userid>', methods=['POST'])
+def location(userid):
 	try:
-		datauser=request.get_json()
-		print (datauser)
+		location_data=request.get_json()
 		logging.warning("Connecting to DB")
 		cursor = connection.cursor()
-		logging.warning("Connection with DB established")	
-		#check if userid exist	
-		cursor.execute("SELECT * FROM userdata WHERE userid=%s;" , [datauser['userid'],])
-						
-		if cursor.fetchone()==None:	
-			i=0
-			create_string = "INSERT INTO userdata("
-			for key in datauser:
-				if i==0:
-					create_string = create_string+str(key)
-					i=1
-				else:	
-					create_string = create_string+","+str(key)
-			i=0		
-			create_string = create_string+ ") VALUES("+"'"  
-			for key in datauser:
-				if i==0:
-					create_string = create_string+str(datauser[key])
-					i=1
-				else:	
-					create_string = create_string+"'"+","+"'"+str(datauser[key])
-			
-			create_string = create_string +"'"+ ")"
-			
-		else:
-			create_string = "UPDATE templocation SET longtitude=" + datauser['longtitude']+",latitude="+datauser['latitude']+" WHERE userid='"+datauser['userid']+"'"
+		logging.warning("Connection with DB established")
 
-		cursor.execute(create_string)
+		sql = """
+		INSERT INTO templocation (userid, longtitude, latitude) 
+			VALUES ('{userid}', {longtitude}, {latitude})
+			ON CONFLICT (userid) DO UPDATE 
+			  SET longtitude = excluded.longtitude, 
+				  latitude = excluded.latitude
+		""".format(userid=userid, longtitude=location_data['longtitude'], latitude=location_data['latitude'])
+
+		cursor.execute(sql)
 		connection.commit()
-		message='Location has been registered'
 
 	except Exception as e:
-		print("Error [%r]" % (e))
-		sys.exit(1)
+		print(e)
+		return '', 500
+
 	finally:
 		if cursor:
 			cursor.close()
 
-	return jsonify({'Report': message})
+	return '', 200
 
 
 ###################################################################################################

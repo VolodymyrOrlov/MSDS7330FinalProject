@@ -22,6 +22,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             updateStatusText()
         }
     }
+    
+    var lastLocation: CLLocation!
+    
+    var userID: String = UIDevice.current.identifierForVendor!.uuidString
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var statusTextView: UITextView!
@@ -59,6 +63,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     func updateLocation(_ latitude : Double, _ longitude : Double) {
         let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        let llocation = lastLocation.or {
+            lastLocation = location
+            return location
+        }
+
+        print(location.distance(from: llocation))
+        if(location.distance(from: llocation) > 20){
+            print("Moved 20 meters")
+           lastLocation = location
+        }
+        
+        server.reportLocation(userID, location)
         
         guard let currentFrame = sceneView.session.currentFrame else {
             return
@@ -98,13 +115,17 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         tokens.append(Token(37.309260, -121.976377))
         tokens.append(Token(37.309146, -121.975958))
         
-        let deviceID = UIDevice.current.identifierForVendor!.uuidString
-        
-        let user = User.getOrCreate(id: deviceID, realm: realm)
-        
-        user.save(realm: realm)
-        
-        server.updateUser(user)
+        server.syncUser(userID) { userID, name in
+            
+            let realm: Realm = try! Realm()
+            
+            let user = User.getOrCreate(id: userID, realm: realm)
+            
+            try! realm.write {
+                user.name = name
+            }
+            
+        }
         
         updateStatusText()
         
