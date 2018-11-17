@@ -190,11 +190,12 @@ def getlist(userid,r):
 ###################################################################################################
 # collection acception
 ########################################################################################
-@app.route('/api/game/collection_reg', methods=['POST'])
-def collection_reg():
+@app.route('/api/game/collection_reg/<userid>', methods=['POST'])
+def collection_reg(userid):
 
 	object_data = request.get_json()
 
+	assert(userid)
 	assert('objectcategory' in object_data)
 	assert('objectid' in object_data)
 	assert('pointlatitude' in object_data)
