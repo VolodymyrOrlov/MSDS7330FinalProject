@@ -152,4 +152,62 @@ class Server {
         
     }
     
+    func getTokens(_ userID: String, completion: @escaping ([Token]) -> ()) {
+        
+        guard let baseURL = self.baseURL else {
+            return
+        }
+        
+        guard let endpointUrl = URL(string: "\(baseURL)/getlist/\(userID)/500") else {
+            return
+        }
+        
+        do {
+            
+            var request = URLRequest(url: endpointUrl)
+            request.httpMethod = "GET"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+                
+                guard error == nil else {
+                    print("returning error")
+                    return
+                }
+                
+                guard let content = data else {
+                    print("not returning data")
+                    return
+                }
+                
+                
+                guard let json = (try? JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String: Any] else {
+                    print("Not containing JSON")
+                    return
+                }
+                
+                guard let jlist = json["Token_List"] as? [[String: Any]] else {
+                    return
+                }
+                
+                var tokens = [Token]()
+                
+                for jitem in jlist {
+                    let lat = jitem["pointlatitude"] as? Double
+                    let long = jitem["pointlongtitude"] as? Double
+                    tokens.append(Token(lat ?? 0.0, long ?? 0.0))
+                }
+                
+                completion(tokens)
+                
+            }
+            
+            task.resume()
+            
+        }catch{
+        }
+        
+    }
+    
 }

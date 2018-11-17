@@ -70,8 +70,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         }
 
         print(location.distance(from: llocation))
-        if(location.distance(from: llocation) > 20){
-            print("Moved 20 meters")
+        if(location.distance(from: llocation) > 1){
+            server.getTokens(userID){ tokens in
+                print("got \(tokens.count) tokens")
+            }
            lastLocation = location
         }
         
