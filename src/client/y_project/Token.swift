@@ -46,16 +46,29 @@ class Token {
     
     func detectCollision(_ camera: ARCamera) -> Bool {
         
-        let objDistance = simd_distance(self.modelNode.simdTransform.columns.3,
+        guard let model = self.modelNode else {
+            return false
+        }
+        
+        let objDistance = simd_distance(model.simdTransform.columns.3,
                                         camera.transform.columns.3)
         
         if objDistance < 5 {
-            self.modelNode.removeFromParentNode()
+            deleteToken()
             return true
         } else {
             return false
         }
         
+    }
+    
+    func deleteToken() {
+        
+        guard let model = self.modelNode else {
+            return
+        }
+        
+        model.removeFromParentNode()
     }
     
     private func positionModel(_ location: CLLocation) {

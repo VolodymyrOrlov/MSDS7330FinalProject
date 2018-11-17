@@ -175,14 +175,14 @@ def getlist(userid,r):
 		{
 			"objectid": "collect06",
 			"objectcategory": "art",
-			"pointlatitude": -121.976377,
-			"pointlongtitude": 37.309260
+			"pointlatitude": 37.309260,
+			"pointlongtitude": -121.976377
 		},
 		{
 			"objectid": "collect05",
 			"objectcategory": "politics",
-			"pointlatitude": -121.975958,
-			"pointlongtitude": 37.309146
+			"pointlatitude": 37.309146,
+			"pointlongtitude": -121.975958
 		}
 	]})
 

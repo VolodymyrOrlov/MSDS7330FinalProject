@@ -61,6 +61,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         self.audioPlayer.play()
     }
     
+    func updateTokensList(_ tokens: [Token]){
+        for token in self.tokens {
+            token.deleteToken()
+        }
+        
+        self.tokens.removeAll()
+        
+        for token in tokens {
+            self.tokens.append(token)
+        }
+        
+    }
+    
     func updateLocation(_ latitude : Double, _ longitude : Double) {
         let location = CLLocation(latitude: latitude, longitude: longitude)
         
@@ -70,9 +83,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         }
 
         print(location.distance(from: llocation))
-        if(location.distance(from: llocation) > 1){
+        if(location.distance(from: llocation) > 20){
             server.getTokens(userID){ tokens in
-                print("got \(tokens.count) tokens")
+                self.updateTokensList(tokens)
             }
            lastLocation = location
         }
@@ -114,9 +127,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         sceneView.scene = scene
         
-        tokens.append(Token(37.309260, -121.976377))
-        tokens.append(Token(37.309146, -121.975958))
-        
         server.syncUser(userID) { userID, name in
             
             let realm: Realm = try! Realm()
@@ -127,6 +137,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
                 user.name = name
             }
             
+        }
+        
+        server.getTokens(userID){ tokens in
+            self.updateTokensList(tokens)
         }
         
         updateStatusText()
