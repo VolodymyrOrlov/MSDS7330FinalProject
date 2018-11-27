@@ -15,21 +15,22 @@ import psycopg2.extras
 
 app = Flask(__name__)
 
-#connection = psycopg2.connect("dbname='postgres' user='postgres' host='localhost' password='' port='5432'") #Vlad
-connection = psycopg2.connect("dbname='game' user='postgres' host='localhost' password='nikon123' port='5432'") #Vit
+connection = psycopg2.connect("dbname='postgres' user='postgres' host='localhost' password='' port='5432'") #Vlad
+connection.set_session(autocommit=True)
+logging.basicConfig(level=logging.INFO)
 
 # postgres   
 ########################################################################3
-# user  registration  
+# update user
 ########################################################################################
 @app.route('/api/game/user', methods=['POST'])
 def user_registration():
 	try:
 		datauser=request.get_json()
-		logging.warning("Connecting to DB")
+
+		logging.info('registering new user {}'.format(datauser))
 
 		cursor = connection.cursor()
-		logging.warning("Connection with DB established")	
 
 		#check if userid exist	
 		cursor.execute("SELECT * FROM userdata WHERE userid=%s;" , [datauser['userid'],])
@@ -53,7 +54,6 @@ def user_registration():
 					create_string = create_string+"'"+","+"'"+str(datauser[key])
 			create_string = create_string +"'"+ ")"
 			cursor.execute(create_string)
-			connection.commit()
 
 		else:
 			def type_format(v):
@@ -66,7 +66,6 @@ def user_registration():
 			sql = """update userdata set {} where userid = '{}'""".format(', '.join(map(lambda k: k + '=' + type_format(datauser[k]), keys)), datauser['userid'])
 			print(sql)
 			cursor.execute(sql)
-			connection.commit()
 
 
 	except Exception as e:
@@ -79,18 +78,28 @@ def user_registration():
 	return ''
 
 ###################################################################################################
-# user private data
+# sync user data
 ########################################################################################
 
 @app.route('/api/game/user/<userid>', methods=[ 'GET'])
 def user(userid):
 
+	logging.info('requested data for user with ID {}'.format(userid))
+
 	cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
 	try:
-		cursor.execute("SELECT * FROM userdata WHERE userid=%s;" , [userid,])
+		cursor.execute("SELECT * FROM userdata WHERE userid=%s" , [userid,])
 		rows = cursor.fetchall()
 		if not rows:
-			return '', 404
+			name = 'Player 1'
+			sql = """
+			INSERT INTO userdata (userid, firstname) 
+			VALUES ('{userid}', '{firstname}')
+			""".format(userid=userid, firstname=name)
+
+			cursor.execute(sql)
+
+			return jsonify({'userid': userid, 'name': name})
 		else:
 			return jsonify({'userid': rows[0]['userid'], 'name': rows[0]['firstname']})
 
@@ -108,82 +117,63 @@ def user(userid):
 ########################################################################################
 @app.route('/api/game/user-score/<userid>', methods=[ 'GET'])
 def user_info(userid):
+
+	logging.info('requested scores of user with ID {}'.format(userid))
+
+	global query_result
+	cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
 	try:
-		#datauser=request.get_json()
-		logging.warning("Connecting to DB")
-		cursor = connection.cursor()
-		logging.warning("Connection with DB established")	
-	
-		cursor.execute("SELECT sum(userscore),scorecategory "
-						"FROM totalgamescore WHERE userid=%s	 "
-						"group by scorecategory ", [userid])
-		query_result = [ dict(line) 
-			for line in [zip([ column[0] 
-				for column in cursor.description], row) 
-					for row in cursor.fetchall()] ]						
+
+		cursor.execute("""
+		SELECT scorecategory, sum(userscore) as score
+				FROM 	totalgamescore
+				WHERE  userid='{userid}'
+				group by scorecategory""".format(userid=userid))
+
+		rows = cursor.fetchall()
+		response = {}
+		for row in rows:
+			response[row['scorecategory']] = row['score']
+		return jsonify(response)
 
 	except Exception as e:
-		print("Error [%r]" % (e))
-		sys.exit(1)
+		print(e)
+		return '', 500
 	finally:
 		if cursor:
 			cursor.close()
-
-	if not query_result:
-		return jsonify({'UserInfo': 'user has no score'})
-	else:
-		return jsonify({'UserInfo': query_result})
 
 ##########################################################################################################3	
 # location registration
 ########################################################################################
-@app.route('/api/game/location', methods=['POST'])
-def location():
-	try:
-		datauser=request.get_json()
-		print (datauser)
-		logging.warning("Connecting to DB")
-		connection = psycopg2.connect("dbname='game' user='postgres' host='localhost' password='nikon123' port='5432'")
-		cursor = connection.cursor()
-		logging.warning("Connection with DB established")	
-		#check if userid exist	
-		cursor.execute("SELECT * FROM templocation WHERE userid=%s;" , [datauser['userid'],])
-						
-		if cursor.fetchone()==None:	
-			i=0
-			create_string = "INSERT INTO templocation("
-			for key in datauser:
-				if i==0:
-					create_string = create_string+str(key)
-					i=1
-				else:	
-					create_string = create_string+","+str(key)
-			i=0		
-			create_string = create_string+ ") VALUES("+"'"  
-			for key in datauser:
-				if i==0:
-					create_string = create_string+str(datauser[key])
-					i=1
-				else:	
-					create_string = create_string+"'"+","+"'"+str(datauser[key])
-			
-			create_string = create_string +"'"+ ")"
-			
-		else:
-			create_string = "UPDATE templocation SET longtitude=" + datauser['longtitude']+",latitude="+datauser['latitude']+" WHERE userid='"+datauser['userid']+"'"
+@app.route('/api/game/location/<userid>', methods=['POST'])
+def location(userid):
 
-		cursor.execute(create_string)
-		connection.commit()
-		message='Location has been registered'
+	logging.info('New location for user with ID {} reported'.format(userid))
+
+	cursor = connection.cursor()
+	try:
+		location_data=request.get_json()
+
+		sql = """
+		INSERT INTO templocation (userid, longtitude, latitude) 
+			VALUES ('{userid}', {longtitude}, {latitude})
+			ON CONFLICT (userid) DO UPDATE 
+			  SET longtitude = excluded.longtitude, 
+				  latitude = excluded.latitude
+		""".format(userid=userid, longtitude=location_data['longtitude'], latitude=location_data['latitude'])
+
+		cursor.execute(sql)
 
 	except Exception as e:
-		print("Error [%r]" % (e))
-		sys.exit(1)
+		print(e)
+		return '', 500
+
 	finally:
 		if cursor:
 			cursor.close()
 
-	return jsonify({'Report': message})
+	return '', 200
 
 ###################################################################################################
 # pull list tokens around
@@ -193,9 +183,7 @@ def getlist(userid,r):
 
 	global query_result
 	try:
-		logging.warning("Connecting to DB")
 		cursor = connection.cursor()
-		logging.warning("Connection with DB established")
 
 		cursor.execute("SELECT * FROM templocation WHERE userid=%s;" , [userid])
 
@@ -209,9 +197,10 @@ def getlist(userid,r):
 							"FROM 	objectlocation  as objloc, "
 								"object as obj "
 								"CROSS JOIN (SELECT ST_MakePoint(%s,%s)::geography AS ref_geom) AS r "
-								"WHERE ST_DWithin(geom, ref_geom, %s) "
+								"WHERE ST_DWithin(ST_MakePoint(pointlatitude, pointlongtitude)::geography, ref_geom, %s) "
 								"and objloc.objectid=obj.objectid "
-								"and obj.objectid not in (select totalgamescore.objectid from totalgamescore)" , (query_result_location[0]['longtitude'],query_result_location[0]['latitude'],r))
+								"and obj.objectid not in (select totalgamescore.objectid from totalgamescore)" ,
+			(query_result_location[0]['latitude'], query_result_location[0]['longtitude'],r))
 
 		query_result = [ dict(line) 
 			for line in [zip([ column[0] 
@@ -224,110 +213,53 @@ def getlist(userid,r):
 	finally:
 		if cursor:
 			cursor.close()
+
+	logging.info('Found {} objects around user with ID {}'.format(len(query_result), userid))
 
 	return jsonify({'Token_List': query_result})
 
 ###################################################################################################
 # collection acception
 ########################################################################################
-@app.route('/api/game/collection_reg', methods=['POST'])
-def collection_reg():
+@app.route('/api/game/collection_reg/<userid>', methods=['POST'])
+def collection_reg(userid):
 	
 	global query_result
+	cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
 	try:
-		datauser=request.get_json()
+		data=request.get_json()
 
-		logging.warning("Connecting to DB")
-		cursor = connection.cursor()
-		logging.warning("Connection with DB established")	
-				
-		i=0
-		create_string = "INSERT INTO totalgamescore("
-		for key in datauser:
-			if i==0:
-				create_string = create_string+str(key)
-				i=1
-			else:	
-				create_string = create_string+","+str(key)
-		i=0		
-		create_string = create_string+ ") VALUES("+"'"  
-		for key in datauser:
-			if i==0:
-				create_string = create_string+str(datauser[key])
-				i=1
-			else:	
-				create_string = create_string+"'"+","+"'"+str(datauser[key])
+		objectid = data['objectid'].strip()
 
-		create_string = create_string +"'"+ ")"
-		print (create_string)
-		cursor.execute(create_string)
-		connection.commit()
+		logging.info('User with ID {} reported a collision with {}!'.format(userid, objectid))
 
-		cursor.execute("SELECT DISTINCT storyfile, q.totalscore "
-						"FROM "
-								"segment as seg, ( "
-								"SELECT sum(userscore) as totalscore, scorecategory "
-								"FROM totalgamescore "
-								"WHERE userid=%s "
-								"group by scorecategory "
-								") as q "
-							"WHERE "
-								"q.scorecategory=seg.segmentcategory "
-								"and q.totalscore>=seg.segmentthreshold "
-								"and seg.segmentcategory=%s ", [datauser['userid'],datauser['scorecategory']])
-					 
-		if cursor.rowcount==0:	
-			print (datauser)
-			cursor.execute("SELECT sum(userscore),scorecategory "
-								"FROM 	totalgamescore "
-								"WHERE  userid=%s "
-								"group by scorecategory " , [datauser['userid'],])
+		sql = """
+		insert into totalgamescore(userid, userscore, scorecategory, eventtime, objectid)
+		(select '{userid}', objectbasescore, objectcategory, current_timestamp, objectid from object where objectid = '{objectid}')
+		ON CONFLICT DO NOTHING
+		""".format(userid=userid, objectid=objectid)
 
-		query_result = [ dict(line) 
-			for line in [zip([ column[0] 
-				for column in cursor.description], row) 
-					for row in cursor.fetchall()] ]
+		cursor.execute(sql)
+
+		cursor.execute("""
+		SELECT scorecategory, sum(userscore) as score
+				FROM 	totalgamescore
+				WHERE  userid='{userid}'
+				group by scorecategory""".format(userid=userid))
+
+		rows = cursor.fetchall()
+		response = {}
+		for row in rows:
+			response[row['scorecategory']] = row['score']
+		return jsonify(response)
 
 	except Exception as e:
-		print("Error [%r]" % (e))
-		sys.exit(1)
+		print(e)
+		return '', 500
 	finally:
 		if cursor:
 			cursor.close()
 
-	return jsonify({'Report': query_result})
-
-## Starts the server for serving Rest Services 
+## Starts the server for serving Rest Services
 if __name__ == '__main__':
-    app.run(debug=True)
-    #app.run(host='192.168.1.68', debug=True)  #Vlad
-
-##########################################################################################################3	
-# location registration  Vlad version for postgres >9.5
-########################################################################################
-#@app.route('/api/game/location/<userid>', methods=['POST'])
-#def location(userid):
-#	try:
-#		location_data=request.get_json()
-#		logging.warning("Connecting to DB")
-#		cursor = connection.cursor()
-#		logging.warning("Connection with DB established")
-#
-#		sql = """
-#		INSERT INTO templocation (userid, longtitude, latitude) 
-#			VALUES ('{userid}', {longtitude}, {latitude})
-#			ON CONFLICT (userid) DO UPDATE SET longtitude = excluded.longtitude,latitude = excluded.latitude
-#		""".format(userid=userid, longtitude=location_data['longtitude'], latitude=location_data['latitude'])
-#
-#		cursor.execute(sql)
-#		connection.commit()
-#
-#	except Exception as e:
-#		print(e)
-#		return '', 500
-#
-#	finally:
-#		if cursor:
-#			cursor.close()
-#
-#	return '', 200
+    app.run(host='192.168.1.68', debug=False)

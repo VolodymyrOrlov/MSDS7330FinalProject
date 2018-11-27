@@ -8,11 +8,15 @@ class Token {
     
     var modelNode: SCNNode!
     var pointLocation: CLLocation
+    var objectID: String!
+    var objectCategory: String!
     var originalTransform: SCNMatrix4!
     var distance: Float!
     
-    init(_ latitude: Double, _ longitude: Double) {
+    init(_ objectID: String, _ objectCategory: String, _ latitude: Double, _ longitude: Double) {
         self.pointLocation = CLLocation(latitude: latitude, longitude: longitude)
+        self.objectID = objectID
+        self.objectCategory = objectCategory
     }
     
     func updateLocation(_ location : CLLocation, _ modelScene: SCNScene) {

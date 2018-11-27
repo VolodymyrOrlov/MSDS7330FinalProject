@@ -17,7 +17,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     let server = Server(baseURL: "http://192.168.1.68:5000/api/game")
     
-    var score: Int = 0 {
+    var score: (Int, Int, Int) = (0, 0, 0) {
         didSet {
             updateStatusText()
         }
@@ -100,7 +100,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             $0.updateLocation(location, sceneView.scene)
            
             if($0.detectCollision(currentFrame.camera)){
-                score += 1
+                server.reportCollision(userID, $0) { culture, politics, technology in
+                   self.score = (culture, politics, technology)
+                }
                 playSound()
                 return false
             } else{
@@ -143,6 +145,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             self.updateTokensList(tokens)
         }
         
+        server.getScore(userID){ culture, politics, technology in
+            self.score = (culture, politics, technology)
+        }
+        
         updateStatusText()
         
     }
@@ -178,7 +184,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     private func updateStatusText() {
-        statusTextView.text = "\(String(format: "%d", score)) items collected\n"
+        DispatchQueue.main.async {
+            self.statusTextView.text = "culture: \(self.score.0), politics: \(self.score.1), technology: \(self.score.2)\n"
+        }
     }
     
 }

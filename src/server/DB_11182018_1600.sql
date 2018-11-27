@@ -8,6 +8,15 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
+DROP SCHEMA if exists topology CASCADE;
+DROP TABLE IF EXISTS object cascade;
+DROP TABLE IF EXISTS objectlocation cascade;
+DROP TABLE IF EXISTS segment cascade;
+DROP TABLE IF EXISTS story cascade;
+DROP TABLE IF EXISTS templocation cascade;
+DROP TABLE IF EXISTS totalgamescore cascade;
+DROP TABLE IF EXISTS userdata cascade;
+
 --
 -- Name: topology; Type: SCHEMA; Schema: -; Owner: postgres
 --
@@ -72,7 +81,7 @@ SET default_with_oids = false;
 CREATE TABLE object (
     objectid character varying(30) NOT NULL,
     objectcategory character(30) NOT NULL,
-    "objectBaseScore" integer NOT NULL
+    objectbasescore integer NOT NULL
 );
 
 
@@ -125,7 +134,7 @@ ALTER TABLE public.story OWNER TO postgres;
 --
 
 CREATE TABLE templocation (
-    userid character varying(30) NOT NULL,
+    userid character varying(255) NOT NULL,
     longtitude double precision NOT NULL,
     latitude double precision NOT NULL
 );
@@ -138,7 +147,7 @@ ALTER TABLE public.templocation OWNER TO postgres;
 --
 
 CREATE TABLE totalgamescore (
-    userid character varying(30) NOT NULL,
+    userid character varying(255) NOT NULL,
     userscore integer NOT NULL,
     scorecategory text NOT NULL,
     eventtime timestamp without time zone NOT NULL,
@@ -153,7 +162,7 @@ ALTER TABLE public.totalgamescore OWNER TO postgres;
 --
 
 CREATE TABLE userdata (
-    userid character varying(30) NOT NULL,
+    userid character varying(255) NOT NULL,
     firstname text
 );
 
@@ -164,7 +173,7 @@ ALTER TABLE public.userdata OWNER TO postgres;
 -- Data for Name: object; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY object (objectid, objectcategory, "objectBaseScore") FROM stdin;
+COPY object (objectid, objectcategory, objectbasescore) FROM stdin;
 object01	politics                      	5
 object02	politics                      	20
 object03	politics                      	15
