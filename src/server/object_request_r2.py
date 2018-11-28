@@ -248,10 +248,27 @@ def collection_reg(userid):
 				group by scorecategory""".format(userid=userid))
 
 		rows = cursor.fetchall()
-		response = {}
+		scores = {}
 		for row in rows:
-			response[row['scorecategory']] = row['score']
-		return jsonify(response)
+			scores[row['scorecategory']] = row['score']
+
+		sql = """
+		select storyfile from segment s 
+			left join 
+			(select scorecategory, sum(userscore) as userscore 
+				from totalgamescore
+				where userid = '{userid}'
+				group by scorecategory) gs
+			on s.segmentcategory = gs.scorecategory
+			where segmentthreshold <= userscore""".format(userid=userid)
+
+		cursor.execute(sql)
+
+		text = ' '.join(list(map(lambda x: x[0], cursor.fetchall())))
+
+		scores['story'] = text
+
+		return jsonify(scores)
 
 	except Exception as e:
 		print(e)

@@ -207,7 +207,7 @@ class Server {
         
     }
     
-    func reportCollision(_ userID: String, _ token: Token, completion: @escaping (Int, Int, Int) -> ()) {
+    func reportCollision(_ userID: String, _ token: Token, completion: @escaping (Int, Int, Int, String) -> ()) {
         
         guard let baseURL = self.baseURL else {
             return
@@ -255,7 +255,9 @@ class Server {
                 
                 let technology = json["technology"] as? Int ?? 0
                 
-                completion(culture, politics, technology)
+                let story = json["story"] as? String ?? ""
+                
+                completion(culture, politics, technology, story)
                 
             }
             

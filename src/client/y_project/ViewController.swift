@@ -100,8 +100,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             $0.updateLocation(location, sceneView.scene)
            
             if($0.detectCollision(currentFrame.camera)){
-                server.reportCollision(userID, $0) { culture, politics, technology in
+                server.reportCollision(userID, $0) { culture, politics, technology, story in
                    self.score = (culture, politics, technology)
+                   self.displayStorySegment(story)
                 }
                 playSound()
                 return false
@@ -149,8 +150,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             self.score = (culture, politics, technology)
         }
         
-        updateStatusText()
+        updateStatusText()                
         
+    }
+    
+    func displayStorySegment(_ text: String) {
+        if(!text.isEmpty){
+            DispatchQueue.main.async {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "Story") as! StoryViewController
+                newViewController.text = text
+                self.present(newViewController, animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
