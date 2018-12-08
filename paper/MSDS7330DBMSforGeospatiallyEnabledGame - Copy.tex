@@ -174,29 +174,37 @@ One major consideration in choice of database schema is to what extent the game 
 
 We use Python to create and RESTful API that connects the database with the ser interface. This middle layer performs the following operations:
 
-Player Registration: Record user profile data (UserID, name, email address) from the client’s input on the mobile device. 
+\textbf{Player Registration:} Record user profile data (UserID, name, email address) from the client’s input on the mobile device. 
+\textit{Details:}
 @app.route('/api/game/user)
-Input JSON format example: {"userid" : "user01", "firstname" : "Arturo"} 
+Input JSON format example: \big\{"userid" : "user01", "firstname" : "Arturo"\big\}
 
-Player State Synchronization: Based on UserID, provide user data through a response to the client from the database.
+
+\textbf{Player State Synchronization:} Based on UserID, provide user data through a response to the client from the database.
+\textit{Details:}
 @app.route('/api/game/user/<userid>')
 Input : UserID
-Response JSON format : {"userid" : "user01", "firstname" : "Arturo"} 
+Response JSON format : \big\{"userid" : "user01", "firstname" : "Arturo"\big\}
 
-Player location: Instantaneously collect the player’s location data (latitude and longitude coordinates), and update this information in the database when the player moves according to the set thresholds (one update every XX)
+\textbf{Player location:} Instantaneously collect the player’s location data (latitude and longitude coordinates), and update this information in the database when the player moves according to the set thresholds (one update every XX).
+\textit{Details:}
 @app.route('/api/game/location‘)
-Input JSON format example: {"latitude":  "32.7877", "longitude" : " -96.8062"}
+Input JSON format example: \big\{"latitude":  "32.7877", "longitude" : " -96.8062"\big\}
 
-List of Objects around the player’s location: Send a response to the client reporting all objects avaialbe for collection, based on current position within a specified radius.
+\textbf{List of Objects around the player’s location:} Send a response to the client reporting all objects avaialbe for collection, based on current position within a specified radius.
+\textit{Details:}
 @app.route('/api/game/getlist/<userid>/<r>)
 Input : UserID and Radius
 Reponse JSON format : List of all available objects
 
-Colission report: Send a response to the client reporting the game score and revealing new story segments, which are triggered according to the SegmentThreshold parameter in the database. 
+\textbf{Colission report:} Send a response to the client reporting the game score and revealing new story segments, which are triggered according to the SegmentThreshold parameter in the database. 
+\textit{Details:}
 @app.route('/api/game/collection-reg‘)
 Response JSON format : Current Score and Story Segment and story based on score
 
-User score status per Game category API - @app.route('/api/game/user-score/<userid>‘)
+\textbf{User score status per Game category:} 
+\textit{Details:}
+API - @app.route('/api/game/user-score/<userid>‘)
 Input : UserID
 Response JSON format : ScoreCategory and Current score
 
