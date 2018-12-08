@@ -15,7 +15,7 @@ import psycopg2.extras
 
 app = Flask(__name__)
 
-connection = psycopg2.connect("dbname='postgres' user='postgres' host='localhost' password='' port='5432'") #Vlad
+connection = psycopg2.connect("dbname='projecty' user='vorl' host='localhost' password='' port='5432'") #Vlad
 connection.set_session(autocommit=True)
 logging.basicConfig(level=logging.INFO)
 
@@ -95,6 +95,7 @@ def user(userid):
 			sql = """
 			INSERT INTO userdata (userid, firstname) 
 			VALUES ('{userid}', '{firstname}')
+			ON CONFLICT DO NOTHING
 			""".format(userid=userid, firstname=name)
 
 			cursor.execute(sql)
@@ -199,8 +200,8 @@ def getlist(userid,r):
 								"CROSS JOIN (SELECT ST_MakePoint(%s,%s)::geography AS ref_geom) AS r "
 								"WHERE ST_DWithin(ST_MakePoint(pointlatitude, pointlongtitude)::geography, ref_geom, %s) "
 								"and objloc.objectid=obj.objectid "
-								"and obj.objectid not in (select totalgamescore.objectid from totalgamescore)" ,
-			(query_result_location[0]['latitude'], query_result_location[0]['longtitude'],r))
+								"and obj.objectid not in (select totalgamescore.objectid from totalgamescore where userid=%s)" ,
+			(query_result_location[0]['latitude'], query_result_location[0]['longtitude'],r, userid))
 
 		query_result = [ dict(line) 
 			for line in [zip([ column[0] 
@@ -253,20 +254,31 @@ def collection_reg(userid):
 			scores[row['scorecategory']] = row['score']
 
 		sql = """
-		select storyfile from segment s 
+		select segmentid, storyfile from segment s 
 			left join 
 			(select scorecategory, sum(userscore) as userscore 
 				from totalgamescore
 				where userid = '{userid}'
 				group by scorecategory) gs
 			on s.segmentcategory = gs.scorecategory
-			where segmentthreshold <= userscore""".format(userid=userid)
+			where segmentthreshold <= userscore
+			and s.segmentid not in (select segmentid from usersegment where userid='{userid}') 
+			order by s.segmentid""".format(userid=userid)
 
 		cursor.execute(sql)
 
-		text = ' '.join(list(map(lambda x: x[0], cursor.fetchall())))
+		data = cursor.fetchall()
+		segment_ids = list(map(lambda x: x[0], data))
+		text = ' '.join(list(map(lambda x: x[1], data)))
 
 		scores['story'] = text
+
+		for segmentid in segment_ids:
+			sql = """
+			insert into usersegment(userid, segmentid) VALUES ('{userid}', '{segmentid}')
+			ON CONFLICT DO NOTHING
+			""".format(userid=userid, segmentid=segmentid)
+			cursor.execute(sql)
 
 		return jsonify(scores)
 
