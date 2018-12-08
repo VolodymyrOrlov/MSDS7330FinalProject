@@ -1,7 +1,6 @@
 #!flask/bin/python
 from flask import Flask
-import mysql.connector
-from flask import jsonify 
+from flask import jsonify
 from flask import Flask, abort, request 
 import logging
 import json
