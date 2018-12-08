@@ -15,7 +15,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     let realm: Realm = try! Realm()
     
-    let server = Server(baseURL: "http://192.168.1.68:5000/api/game")
+    let server = Server()
     
     var score: (Int, Int, Int) = (0, 0, 0) {
         didSet {
@@ -132,12 +132,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         server.syncUser(userID) { userID, name in
             
-            let realm: Realm = try! Realm()
+            DispatchQueue.main.async {
             
-            let user = User.getOrCreate(id: userID, realm: realm)
-            
-            try! realm.write {
-                user.name = name
+                let user = User.getOrCreate(id: userID, realm: self.realm)
+                
+                try! self.realm.write {
+                    user.name = name
+                }
             }
             
         }

@@ -279,4 +279,4 @@ def collection_reg(userid):
 
 ## Starts the server for serving Rest Services
 if __name__ == '__main__':
-    app.run(host='192.168.1.68', debug=False)
+    app.run(host='0.0.0.0', debug=False)
