@@ -45,16 +45,17 @@ An interesting paper by Chulmo Koo and others investigate relationship between g
 
 \section{Game rules and design considerations}
 \subsection{Problem statement}
-As mentioned, the game consists of players exploring the real world in search of objects. Collecting objects raises the player’s score which will in turn reveal a segment of a story once the player’s score reaches a certain threshold. The objects belong to different categories that correspond to different scores that must be earned and different aspects of the story that may be revealed. As such, this game relies heavily on the search-and-find mechanic as well as desires for collection, completion, and closure of narrative for player engagement \cite{game-methodology, location-based-games}. 
+As mentioned, the game consists of players exploring the real world via augmented reality in search of virtual objects. Collecting objects raises the players score which will in turn reveal a segment of a story once the players score reaches a certain threshold. The virtual objects belong to different categories that correspond to different scores that must be earned and different aspects of the story that may be revealed. As such, this game relies heavily on the search-and-find mechanic as well as desires for collection, completion, and closure of narrative for player engagement \cite{game-methodology, location-based-games}. 
 
-The story is a science fiction story that places the player in the role of an explorer. The player finds himself exploring ruins on another world that once housed an advanced civilization. The player must then find objects that will divulge information about this lost civilization including clues as to what caused the civilization to disappear. Categories consist of Culture, Politics, Technology, and Economy and correspond to the nature of the clues the player discovers.
-
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=2.5in]{imgs/Gameplay.png}
 \caption{Description of the Gameplay}
 \label{Gameplay}
 \end{figure}
+
+
+The story is a science fiction story that places the player in the role of an explorer. The player finds himself exploring ruins on another world that once housed an advanced civilization. The player must then find objects that will divulge information about this lost civilization including clues as to what caused the civilization to disappear. Categories consist of Culture, Politics, and Technology and correspond to the nature of the clues the player discovers. For example, culture objects reveal how the civilization lived and what cultural tensions were present before they disappeared.
 
 Given the rules, mechanics, and the location-based nature of the game, some data and database design considerations are:
 
@@ -170,7 +171,7 @@ One major consideration in choice of database schema is to what extent the game 
 \label{ERDUser}
 \end{figure}
 
-\section(Description of the middle layer API)
+\section{Description of the middle layer API}
 
 We use Python to create and RESTful API that connects the database with the ser interface. This middle layer performs the following operations:
 
