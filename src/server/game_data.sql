@@ -142,7 +142,7 @@ REVOKE ALL ON SCHEMA public FROM vorl;
 GRANT ALL ON SCHEMA public TO vorl;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
-INSERT INTO story VALUES('story1', 'Alpha Centauri');
+-- Vlad's house
 
 INSERT INTO object VALUES('object1', 'culture', 5);
 INSERT INTO object VALUES('object2', 'culture', 5);
@@ -180,6 +180,45 @@ INSERT INTO objectlocation VALUES('objectlocation13', 'object13', 37.311090, -12
 INSERT INTO objectlocation VALUES('objectlocation14', 'object14', 37.310773, -121.972023, NULL);
 INSERT INTO objectlocation VALUES('objectlocation15', 'object15', 37.310204, -121.972013, NULL);
 
+-- SMU
+
+INSERT INTO object VALUES('object16', 'culture', 5);
+INSERT INTO object VALUES('object17', 'culture', 5);
+INSERT INTO object VALUES('object18', 'culture', 5);
+INSERT INTO object VALUES('object19', 'culture', 5);
+INSERT INTO object VALUES('object20', 'culture', 5);
+
+INSERT INTO object VALUES('object21', 'politics', 5);
+INSERT INTO object VALUES('object22', 'politics', 5);
+INSERT INTO object VALUES('object23', 'politics', 5);
+INSERT INTO object VALUES('object24', 'politics', 5);
+INSERT INTO object VALUES('object25', 'politics', 5);
+
+INSERT INTO object VALUES('object26', 'technology', 5);
+INSERT INTO object VALUES('object27', 'technology', 5);
+INSERT INTO object VALUES('object28', 'technology', 5);
+INSERT INTO object VALUES('object29', 'technology', 5);
+INSERT INTO object VALUES('object30', 'technology', 5);
+
+INSERT INTO objectlocation VALUES('objectlocation16', 'object16', 32.844379, -96.784926, NULL);
+INSERT INTO objectlocation VALUES('objectlocation17', 'object17', 32.843927, -96.781660, NULL);
+INSERT INTO objectlocation VALUES('objectlocation18', 'object18', 32.843841, -96.784987, NULL);
+INSERT INTO objectlocation VALUES('objectlocation19', 'object19', 32.845763, -96.782263, NULL);
+INSERT INTO objectlocation VALUES('objectlocation20', 'object20', 32.845448, -96.779870, NULL);
+
+INSERT INTO objectlocation VALUES('objectlocation21', 'object21', 32.846010, -96.779793, NULL);
+INSERT INTO objectlocation VALUES('objectlocation22', 'object22', 32.846289, -96.785436, NULL);
+INSERT INTO objectlocation VALUES('objectlocation23', 'object23', 32.843263, -96.785368, NULL);
+INSERT INTO objectlocation VALUES('objectlocation24', 'object24', 32.841041, -96.784964, NULL);
+INSERT INTO objectlocation VALUES('objectlocation25', 'object25', 32.839398, -96.785086, NULL);
+
+INSERT INTO objectlocation VALUES('objectlocation26', 'object26', 32.838454, -96.785492, NULL);
+INSERT INTO objectlocation VALUES('objectlocation27', 'object27', 32.838650, -96.781957, NULL);
+INSERT INTO objectlocation VALUES('objectlocation28', 'object28', 32.842090, -96.786223, NULL);
+INSERT INTO objectlocation VALUES('objectlocation29', 'object29', 32.843072, -96.782618, NULL);
+INSERT INTO objectlocation VALUES('objectlocation30', 'object30', 32.842596, -96.782774, NULL);
+
+INSERT INTO story VALUES('story1', 'Alpha Centauri');
 
 INSERT INTO segment VALUES('segment1', 'culture', 5, 'The abandoned city appears to have been well preserved due to its massive walls. This is excellent as it should also preserve all the dwellings, tools, art, and such within. No city of comparable size or as well preserved can be found anywhere near this place. In fact, the environment is so hostile that we would never have thought that this planet sustained life, much less complex civilizations. It is to think that not only were we able to find intelligent life but that we may be able to figure out how they lived. However, we must be wary that cultures that grow in isolation often fail to resemble the people and cultures everywhere else. Every preliminary conclusion must be taken with a grain of salt until we have more information.', 'story1');
 INSERT INTO segment VALUES('segment2', 'culture', 10, 'All the remains in the city appear to have the same aesthetic of jagged surfaces made from the same white material. Back on earth, cities tend to have vistas that vary according to the time they were constructed or the person who ordered their construction. Buildings, cars, lights, lampposts, and walkways all vary by when they were built or who was hired to build them. Most objects and buildings here look the same. Everything appears to have the same white and clean, if not Spartan look to them. This somewhat implies a single dominant culture, or at least that someone wants to make it look that way. After all, we don’t know if this is a genuine city that housed civilians or some kind of military or commercial outpost.  Perhaps this city had a purpose.', 'story1');
