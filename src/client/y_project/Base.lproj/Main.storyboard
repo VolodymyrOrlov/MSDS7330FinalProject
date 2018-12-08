@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="slm-13-QSj">
-                                <rect key="frame" x="10" y="40" width="355" height="58.5"/>
+                                <rect key="frame" x="10" y="84" width="355" height="58.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkU-ka-jCG">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
@@ -137,7 +137,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="uxF-A5-CIF"/>
+                                    <segue destination="8Lw-7o-fYc" kind="show" id="gmp-5c-f2Q"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,10 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xu4-cZ-Li7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="912.5937031484259"/>
+            <point key="canvasLocation" x="1076" y="889"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="uxF-A5-CIF"/>
-    </inferredMetricsTieBreakers>
 </document>

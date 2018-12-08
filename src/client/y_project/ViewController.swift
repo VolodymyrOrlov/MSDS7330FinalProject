@@ -83,7 +83,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         }
 
         print(location.distance(from: llocation))
-        if(location.distance(from: llocation) > 20){
+        if(location.distance(from: llocation) > 30){
             server.getTokens(userID){ tokens in
                 self.updateTokensList(tokens)
             }
