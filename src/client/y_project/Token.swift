@@ -16,7 +16,7 @@ class Token {
     init(_ objectID: String, _ objectCategory: String, _ latitude: Double, _ longitude: Double) {
         self.pointLocation = CLLocation(latitude: latitude, longitude: longitude)
         self.objectID = objectID
-        self.objectCategory = objectCategory
+        self.objectCategory = objectCategory.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
     }
     
     func updateLocation(_ location : CLLocation, _ modelScene: SCNScene) {
@@ -25,7 +25,13 @@ class Token {
         if self.modelNode == nil {
             let sphere = SCNSphere(radius: 0.3)
             let material = SCNMaterial()
-            material.diffuse.contents = UIImage(named: "art.scnassets/ball")
+            if(objectCategory == "culture"){
+              material.diffuse.contents = UIImage(named: "art.scnassets/culture")
+            } else if (objectCategory == "politics"){
+              material.diffuse.contents = UIImage(named: "art.scnassets/politics")
+            } else {
+              material.diffuse.contents = UIImage(named: "art.scnassets/technology")
+            }
             sphere.materials = [material]
             
             self.modelNode = SCNNode(geometry: sphere)

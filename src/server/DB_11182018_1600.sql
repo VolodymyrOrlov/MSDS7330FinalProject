@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS userdata cascade;
 CREATE SCHEMA topology;
 
 
-ALTER SCHEMA topology OWNER TO postgres;
+ALTER SCHEMA topology OWNER TO vorl;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
@@ -85,7 +85,7 @@ CREATE TABLE object (
 );
 
 
-ALTER TABLE public.object OWNER TO postgres;
+ALTER TABLE public.object OWNER TO vorl;
 
 --
 -- Name: objectlocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -100,7 +100,7 @@ CREATE TABLE objectlocation (
 );
 
 
-ALTER TABLE public.objectlocation OWNER TO postgres;
+ALTER TABLE public.objectlocation OWNER TO vorl;
 
 --
 -- Name: segment; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -115,7 +115,7 @@ CREATE TABLE segment (
 );
 
 
-ALTER TABLE public.segment OWNER TO postgres;
+ALTER TABLE public.segment OWNER TO vorl;
 
 --
 -- Name: story; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -127,7 +127,7 @@ CREATE TABLE story (
 );
 
 
-ALTER TABLE public.story OWNER TO postgres;
+ALTER TABLE public.story OWNER TO vorl;
 
 --
 -- Name: templocation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -140,7 +140,7 @@ CREATE TABLE templocation (
 );
 
 
-ALTER TABLE public.templocation OWNER TO postgres;
+ALTER TABLE public.templocation OWNER TO vorl;
 
 --
 -- Name: totalgamescore; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -155,7 +155,7 @@ CREATE TABLE totalgamescore (
 );
 
 
-ALTER TABLE public.totalgamescore OWNER TO postgres;
+ALTER TABLE public.totalgamescore OWNER TO vorl;
 
 --
 -- Name: userdata; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -167,7 +167,7 @@ CREATE TABLE userdata (
 );
 
 
-ALTER TABLE public.userdata OWNER TO postgres;
+ALTER TABLE public.userdata OWNER TO vorl;
 
 --
 -- Data for Name: object; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -22130,8 +22130,8 @@ ALTER TABLE ONLY templocation
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM postgres;
-GRANT ALL ON SCHEMA public TO postgres;
+REVOKE ALL ON SCHEMA public FROM vorl;
+GRANT ALL ON SCHEMA public TO vorl;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 

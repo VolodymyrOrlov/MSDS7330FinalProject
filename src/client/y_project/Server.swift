@@ -5,8 +5,8 @@ class Server {
     
     var baseURL: String!
     
-    init(baseURL: String){
-        self.baseURL = baseURL
+    init(){
+        self.baseURL = "http://ec2-34-222-107-135.us-west-2.compute.amazonaws.com:5000/api/game"
     }
     
     func updateUser(_ user: User) {

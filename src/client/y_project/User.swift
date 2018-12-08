@@ -20,6 +20,10 @@ class User: Object {
             return u
         })
         
+        try! realm.write {
+            realm.add(user)
+        }
+        
         return user
         
     }

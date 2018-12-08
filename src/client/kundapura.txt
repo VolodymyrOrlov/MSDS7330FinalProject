@@ -1,0 +1,963 @@
+total 16
+drwxr-xr-x  10 vorl  staff  320 Dec  6 17:58 .
+drwxr-xr-x   5 vorl  staff  160 Nov 15 16:17 ..
+-rw-r--r--@  1 vorl  staff   85 Dec  3 19:16 Podfile
+	com.apple.lastuseddate#PS	 16 
+-rw-r--r--   1 vorl  staff  446 Dec  6 08:49 Podfile.lock
+drwxr-xr-x   9 vorl  staff  288 Dec  6 08:49 Pods
+drwxr-xr-x@  3 vorl  staff   96 Dec  3 19:13 build
+	com.apple.xcode.CreatedByBuildSystem	  4 
+-rw-r--r--   1 vorl  staff    0 Dec  6 17:58 kundapura.txt
+drwxr-xr-x  18 vorl  staff  576 Dec  6 17:47 y_project
+drwxr-xr-x@  5 vorl  staff  160 Dec  6 17:53 y_project.xcodeproj
+	LastUpgradeCheck	  4 
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x@  5 vorl  staff  160 Nov 15 16:17 y_project.xcworkspace
+	com.apple.lastuseddate#PS	 16 
+
+./Pods:
+total 8
+drwxr-xr-x   9 vorl  staff  288 Dec  6 08:49 .
+drwxr-xr-x  10 vorl  staff  320 Dec  6 17:58 ..
+drwxr-xr-x   2 vorl  staff   64 Dec  6 08:47 Headers
+drwxr-xr-x   2 vorl  staff   64 Nov 12 12:29 Local Podspecs
+-rw-r--r--   1 vorl  staff  446 Dec  6 08:49 Manifest.lock
+drwxr-xr-x@  5 vorl  staff  160 Dec  6 08:49 Pods.xcodeproj
+	LastUpgradeCheck	  4 
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x   8 vorl  staff  256 Dec  6 08:48 Realm
+drwxr-xr-x   7 vorl  staff  224 Dec  6 08:49 RealmSwift
+drwxr-xr-x   5 vorl  staff  160 Dec  6 08:49 Target Support Files
+
+./Pods/Headers:
+total 0
+drwxr-xr-x  2 vorl  staff   64 Dec  6 08:47 .
+drwxr-xr-x  9 vorl  staff  288 Dec  6 08:49 ..
+
+./Pods/Local Podspecs:
+total 0
+drwxr-xr-x  2 vorl  staff   64 Nov 12 12:29 .
+drwxr-xr-x  9 vorl  staff  288 Dec  6 08:49 ..
+
+./Pods/Pods.xcodeproj:
+total 264
+drwxr-xr-x@ 5 vorl  staff     160 Dec  6 08:49 .
+	LastUpgradeCheck	     4 
+	com.apple.lastuseddate#PS	    16 
+drwxr-xr-x  9 vorl  staff     288 Dec  6 08:49 ..
+-rw-------  1 vorl  staff  131929 Dec  6 08:49 project.pbxproj
+drwxr-xr-x@ 5 vorl  staff     160 Dec  3 19:13 project.xcworkspace
+	com.apple.lastuseddate#PS	    16 
+drwxr-xr-x  3 vorl  staff      96 Nov 12 12:35 xcuserdata
+
+./Pods/Pods.xcodeproj/project.xcworkspace:
+total 8
+drwxr-xr-x@ 5 vorl  staff  160 Dec  3 19:13 .
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x@ 5 vorl  staff  160 Dec  6 08:49 ..
+	LastUpgradeCheck	  4 
+	com.apple.lastuseddate#PS	 16 
+-rw-r--r--  1 vorl  staff  135 Dec  3 19:13 contents.xcworkspacedata
+drwxr-xr-x  3 vorl  staff   96 Dec  3 19:13 xcshareddata
+drwxr-xr-x  3 vorl  staff   96 Dec  3 19:13 xcuserdata
+
+./Pods/Pods.xcodeproj/project.xcworkspace/xcshareddata:
+total 8
+drwxr-xr-x  3 vorl  staff   96 Dec  3 19:13 .
+drwxr-xr-x@ 5 vorl  staff  160 Dec  3 19:13 ..
+	com.apple.lastuseddate#PS	 16 
+-rw-r--r--  1 vorl  staff  238 Dec  3 19:13 IDEWorkspaceChecks.plist
+
+./Pods/Pods.xcodeproj/project.xcworkspace/xcuserdata:
+total 0
+drwxr-xr-x  3 vorl  staff   96 Dec  3 19:13 .
+drwxr-xr-x@ 5 vorl  staff  160 Dec  3 19:13 ..
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x  4 vorl  staff  128 Dec  3 19:13 vorl.xcuserdatad
+
+./Pods/Pods.xcodeproj/project.xcworkspace/xcuserdata/vorl.xcuserdatad:
+total 24
+drwxr-xr-x  4 vorl  staff   128 Dec  3 19:13 .
+drwxr-xr-x  3 vorl  staff    96 Dec  3 19:13 ..
+-rw-r--r--  1 vorl  staff  6579 Dec  3 19:13 UserInterfaceState.xcuserstate
+-rw-r--r--  1 vorl  staff   255 Dec  3 19:13 WorkspaceSettings.xcsettings
+
+./Pods/Pods.xcodeproj/xcuserdata:
+total 0
+drwxr-xr-x  3 vorl  staff   96 Nov 12 12:35 .
+drwxr-xr-x@ 5 vorl  staff  160 Dec  6 08:49 ..
+	LastUpgradeCheck	  4 
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x  3 vorl  staff   96 Dec  6 08:49 vorl.xcuserdatad
+
+./Pods/Pods.xcodeproj/xcuserdata/vorl.xcuserdatad:
+total 0
+drwxr-xr-x  3 vorl  staff   96 Dec  6 08:49 .
+drwxr-xr-x  3 vorl  staff   96 Nov 12 12:35 ..
+drwxr-xr-x  6 vorl  staff  192 Dec  6 08:49 xcschemes
+
+./Pods/Pods.xcodeproj/xcuserdata/vorl.xcuserdatad/xcschemes:
+total 32
+drwxr-xr-x  6 vorl  staff   192 Dec  6 08:49 .
+drwxr-xr-x  3 vorl  staff    96 Dec  6 08:49 ..
+-rw-r--r--  1 vorl  staff  2525 Dec  6 08:49 Pods-y_project.xcscheme
+-rw-r--r--  1 vorl  staff  2088 Dec  6 08:49 Realm.xcscheme
+-rw-r--r--  1 vorl  staff  2098 Dec  6 08:49 RealmSwift.xcscheme
+-rw-r--r--  1 vorl  staff   685 Dec  6 08:49 xcschememanagement.plist
+
+./Pods/Realm:
+total 152
+drwxr-xr-x    8 vorl  staff    256 Dec  6 08:48 .
+drwxr-xr-x    9 vorl  staff    288 Dec  6 08:49 ..
+-rw-r--r--    1 vorl  staff  13657 Dec  6 08:48 LICENSE
+-rw-r--r--    1 vorl  staff   4256 Dec  6 08:48 README.md
+drwxr-xr-x   46 vorl  staff   1472 Dec  6 08:48 Realm
+-rwxr-xr-x    1 vorl  staff  50944 Dec  6 08:48 build.sh
+drwxr-xr-x    3 vorl  staff     96 Dec  6 08:49 core
+drwxr-xr-x  100 vorl  staff   3200 Dec  6 08:48 include
+
+./Pods/Realm/Realm:
+total 1224
+drwxr-xr-x  46 vorl  staff   1472 Dec  6 08:48 .
+drwxr-xr-x   8 vorl  staff    256 Dec  6 08:48 ..
+-r--r--r--   1 vorl  staff   1419 Dec  6 08:48 NSError+RLMSync.m
+drwxr-xr-x   3 vorl  staff     96 Dec  6 08:48 ObjectStore
+-r--r--r--   1 vorl  staff  31353 Dec  6 08:48 RLMAccessor.mm
+-r--r--r--   1 vorl  staff   9740 Dec  6 08:48 RLMAnalytics.mm
+-r--r--r--   1 vorl  staff  19922 Dec  6 08:48 RLMArray.mm
+-r--r--r--   1 vorl  staff   5209 Dec  6 08:48 RLMClassInfo.mm
+-r--r--r--   1 vorl  staff  14147 Dec  6 08:48 RLMCollection.mm
+-r--r--r--   1 vorl  staff   1403 Dec  6 08:48 RLMConstants.m
+-r--r--r--   1 vorl  staff   8064 Dec  6 08:48 RLMJSONModels.m
+-r--r--r--   1 vorl  staff   2010 Dec  6 08:48 RLMListBase.mm
+-r--r--r--   1 vorl  staff  20422 Dec  6 08:48 RLMManagedArray.mm
+-r--r--r--   1 vorl  staff   6274 Dec  6 08:48 RLMMigration.mm
+-r--r--r--   1 vorl  staff  16783 Dec  6 08:48 RLMNetworkClient.mm
+-r--r--r--   1 vorl  staff  12607 Dec  6 08:48 RLMObject.mm
+-r--r--r--   1 vorl  staff  17482 Dec  6 08:48 RLMObjectBase.mm
+-r--r--r--   1 vorl  staff  20169 Dec  6 08:48 RLMObjectSchema.mm
+-r--r--r--   1 vorl  staff  10535 Dec  6 08:48 RLMObjectStore.mm
+-r--r--r--   1 vorl  staff  17024 Dec  6 08:48 RLMObservation.mm
+-r--r--r--   1 vorl  staff   4781 Dec  6 08:48 RLMOptionalBase.mm
+-r--r--r--   1 vorl  staff   5715 Dec  6 08:48 RLMPredicateUtil.mm
+-r--r--r--   1 vorl  staff  24997 Dec  6 08:48 RLMProperty.mm
+-r--r--r--   1 vorl  staff  66376 Dec  6 08:48 RLMQueryUtil.mm
+-r--r--r--   1 vorl  staff   2896 Dec  6 08:48 RLMRealm+Sync.mm
+-r--r--r--   1 vorl  staff  33437 Dec  6 08:48 RLMRealm.mm
+-r--r--r--   1 vorl  staff   2827 Dec  6 08:48 RLMRealmConfiguration+Sync.mm
+-r--r--r--   1 vorl  staff   9555 Dec  6 08:48 RLMRealmConfiguration.mm
+-r--r--r--   1 vorl  staff   5074 Dec  6 08:48 RLMRealmUtil.mm
+-r--r--r--   1 vorl  staff  17990 Dec  6 08:48 RLMResults.mm
+-r--r--r--   1 vorl  staff  13982 Dec  6 08:48 RLMSchema.mm
+-r--r--r--   1 vorl  staff   1075 Dec  6 08:48 RLMSwiftSupport.m
+-r--r--r--   1 vorl  staff  11174 Dec  6 08:48 RLMSyncConfiguration.mm
+-r--r--r--   1 vorl  staff   5329 Dec  6 08:48 RLMSyncCredentials.m
+-r--r--r--   1 vorl  staff   8333 Dec  6 08:48 RLMSyncManager.mm
+-r--r--r--   1 vorl  staff  11893 Dec  6 08:48 RLMSyncPermission.mm
+-r--r--r--   1 vorl  staff   9311 Dec  6 08:48 RLMSyncPermissionResults.mm
+-r--r--r--   1 vorl  staff   7813 Dec  6 08:48 RLMSyncSession.mm
+-r--r--r--   1 vorl  staff  10705 Dec  6 08:48 RLMSyncSessionRefreshHandle.mm
+-r--r--r--   1 vorl  staff   3441 Dec  6 08:48 RLMSyncSubscription.mm
+-r--r--r--   1 vorl  staff  27478 Dec  6 08:48 RLMSyncUser.mm
+-r--r--r--   1 vorl  staff  10927 Dec  6 08:48 RLMSyncUtil.mm
+-r--r--r--   1 vorl  staff   2708 Dec  6 08:48 RLMThreadSafeReference.mm
+-r--r--r--   1 vorl  staff   2513 Dec  6 08:48 RLMUpdateChecker.mm
+-r--r--r--   1 vorl  staff  17012 Dec  6 08:48 RLMUtil.mm
+-rw-r--r--   1 vorl  staff    904 Dec  6 08:48 Realm.modulemap
+
+./Pods/Realm/Realm/ObjectStore:
+total 0
+drwxr-xr-x   3 vorl  staff    96 Dec  6 08:48 .
+drwxr-xr-x  46 vorl  staff  1472 Dec  6 08:48 ..
+drwxr-xr-x  17 vorl  staff   544 Dec  6 08:48 src
+
+./Pods/Realm/Realm/ObjectStore/src:
+total 392
+drwxr-xr-x  17 vorl  staff    544 Dec  6 08:48 .
+drwxr-xr-x   3 vorl  staff     96 Dec  6 08:48 ..
+-r--r--r--   1 vorl  staff    890 Dec  6 08:48 binding_callback_thread_observer.cpp
+-r--r--r--   1 vorl  staff   2093 Dec  6 08:48 collection_notifications.cpp
+drwxr-xr-x  12 vorl  staff    384 Dec  6 08:48 impl
+-r--r--r--   1 vorl  staff  20037 Dec  6 08:48 index_set.cpp
+-r--r--r--   1 vorl  staff  12105 Dec  6 08:48 list.cpp
+-r--r--r--   1 vorl  staff   4646 Dec  6 08:48 object.cpp
+-r--r--r--   1 vorl  staff   9659 Dec  6 08:48 object_schema.cpp
+-r--r--r--   1 vorl  staff  41442 Dec  6 08:48 object_store.cpp
+-r--r--r--   1 vorl  staff     42 Dec  6 08:48 placeholder.cpp
+-r--r--r--   1 vorl  staff  27879 Dec  6 08:48 results.cpp
+-r--r--r--   1 vorl  staff   9640 Dec  6 08:48 schema.cpp
+-r--r--r--   1 vorl  staff  40743 Dec  6 08:48 shared_realm.cpp
+drwxr-xr-x   9 vorl  staff    288 Dec  6 08:48 sync
+-r--r--r--   1 vorl  staff   5041 Dec  6 08:48 thread_safe_reference.cpp
+drwxr-xr-x   3 vorl  staff     96 Dec  6 08:48 util
+
+./Pods/Realm/Realm/ObjectStore/src/impl:
+total 296
+drwxr-xr-x  12 vorl  staff    384 Dec  6 08:48 .
+drwxr-xr-x  17 vorl  staff    544 Dec  6 08:48 ..
+drwxr-xr-x   4 vorl  staff    128 Dec  6 08:48 apple
+-r--r--r--   1 vorl  staff  31607 Dec  6 08:48 collection_change_builder.cpp
+-r--r--r--   1 vorl  staff  16410 Dec  6 08:48 collection_notifier.cpp
+-r--r--r--   1 vorl  staff   3209 Dec  6 08:48 list_notifier.cpp
+-r--r--r--   1 vorl  staff   2799 Dec  6 08:48 object_notifier.cpp
+-r--r--r--   1 vorl  staff   3061 Dec  6 08:48 primitive_list_notifier.cpp
+-r--r--r--   1 vorl  staff  35229 Dec  6 08:48 realm_coordinator.cpp
+-r--r--r--   1 vorl  staff   8793 Dec  6 08:48 results_notifier.cpp
+-r--r--r--   1 vorl  staff  32291 Dec  6 08:48 transact_log_handler.cpp
+-r--r--r--   1 vorl  staff   1439 Dec  6 08:48 weak_realm_notifier.cpp
+
+./Pods/Realm/Realm/ObjectStore/src/impl/apple:
+total 32
+drwxr-xr-x   4 vorl  staff   128 Dec  6 08:48 .
+drwxr-xr-x  12 vorl  staff   384 Dec  6 08:48 ..
+-r--r--r--   1 vorl  staff  8106 Dec  6 08:48 external_commit_helper.cpp
+-r--r--r--   1 vorl  staff  5276 Dec  6 08:48 keychain_helper.cpp
+
+./Pods/Realm/Realm/ObjectStore/src/sync:
+total 248
+drwxr-xr-x   9 vorl  staff    288 Dec  6 08:48 .
+drwxr-xr-x  17 vorl  staff    544 Dec  6 08:48 ..
+drwxr-xr-x   6 vorl  staff    192 Dec  6 08:48 impl
+-r--r--r--   1 vorl  staff  21613 Dec  6 08:48 partial_sync.cpp
+-r--r--r--   1 vorl  staff   2193 Dec  6 08:48 sync_config.cpp
+-r--r--r--   1 vorl  staff  19989 Dec  6 08:48 sync_manager.cpp
+-r--r--r--   1 vorl  staff  16857 Dec  6 08:48 sync_permission.cpp
+-r--r--r--   1 vorl  staff  42204 Dec  6 08:48 sync_session.cpp
+-r--r--r--   1 vorl  staff   8630 Dec  6 08:48 sync_user.cpp
+
+./Pods/Realm/Realm/ObjectStore/src/sync/impl:
+total 80
+drwxr-xr-x  6 vorl  staff    192 Dec  6 08:48 .
+drwxr-xr-x  9 vorl  staff    288 Dec  6 08:48 ..
+drwxr-xr-x  4 vorl  staff    128 Dec  6 08:48 apple
+-r--r--r--  1 vorl  staff  13162 Dec  6 08:48 sync_file.cpp
+-r--r--r--  1 vorl  staff  17448 Dec  6 08:48 sync_metadata.cpp
+-r--r--r--  1 vorl  staff   2025 Dec  6 08:48 work_queue.cpp
+
+./Pods/Realm/Realm/ObjectStore/src/sync/impl/apple:
+total 24
+drwxr-xr-x  4 vorl  staff   128 Dec  6 08:48 .
+drwxr-xr-x  6 vorl  staff   192 Dec  6 08:48 ..
+-r--r--r--  1 vorl  staff  4686 Dec  6 08:48 network_reachability_observer.cpp
+-r--r--r--  1 vorl  staff  3610 Dec  6 08:48 system_configuration.cpp
+
+./Pods/Realm/Realm/ObjectStore/src/util:
+total 8
+drwxr-xr-x   3 vorl  staff    96 Dec  6 08:48 .
+drwxr-xr-x  17 vorl  staff   544 Dec  6 08:48 ..
+-r--r--r--   1 vorl  staff  2901 Dec  6 08:48 uuid.cpp
+
+./Pods/Realm/core:
+total 133744
+drwxr-xr-x  3 vorl  staff        96 Dec  6 08:49 .
+drwxr-xr-x  8 vorl  staff       256 Dec  6 08:48 ..
+-rw-r--r--  1 vorl  staff  68472952 Dec  6 08:48 librealmcore-ios.a
+
+./Pods/Realm/include:
+total 1328
+drwxr-xr-x  100 vorl  staff   3200 Dec  6 08:48 .
+drwxr-xr-x    8 vorl  staff    256 Dec  6 08:48 ..
+-r--r--r--    1 vorl  staff   1586 Dec  6 08:48 NSError+RLMSync.h
+-r--r--r--    1 vorl  staff   1918 Dec  6 08:48 RLMAccessor.h
+-rw-r--r--    1 vorl  staff   4448 Dec  6 08:48 RLMAccessor.hpp
+-rw-r--r--    1 vorl  staff   3050 Dec  6 08:48 RLMAnalytics.hpp
+-r--r--r--    1 vorl  staff  15596 Dec  6 08:48 RLMArray.h
+-r--r--r--    1 vorl  staff   1156 Dec  6 08:48 RLMArray_Private.h
+-rw-r--r--    1 vorl  staff   2303 Dec  6 08:48 RLMArray_Private.hpp
+-rw-r--r--    1 vorl  staff   3964 Dec  6 08:48 RLMClassInfo.hpp
+-r--r--r--    1 vorl  staff  14410 Dec  6 08:48 RLMCollection.h
+-r--r--r--    1 vorl  staff   1048 Dec  6 08:48 RLMCollection_Private.h
+-rw-r--r--    1 vorl  staff   3242 Dec  6 08:48 RLMCollection_Private.hpp
+-r--r--r--    1 vorl  staff   8445 Dec  6 08:48 RLMConstants.h
+-rw-r--r--    1 vorl  staff   3187 Dec  6 08:48 RLMJSONModels.h
+-r--r--r--    1 vorl  staff   1101 Dec  6 08:48 RLMListBase.h
+-r--r--r--    1 vorl  staff   5032 Dec  6 08:48 RLMMigration.h
+-rw-r--r--    1 vorl  staff   1207 Dec  6 08:48 RLMMigration_Private.h
+-rw-r--r--    1 vorl  staff   2678 Dec  6 08:48 RLMNetworkClient.h
+-r--r--r--    1 vorl  staff  22395 Dec  6 08:48 RLMObject.h
+-r--r--r--    1 vorl  staff   1333 Dec  6 08:48 RLMObjectBase.h
+-r--r--r--    1 vorl  staff   3484 Dec  6 08:48 RLMObjectBase_Dynamic.h
+-r--r--r--    1 vorl  staff    922 Dec  6 08:48 RLMObjectBase_Private.h
+-r--r--r--    1 vorl  staff   2084 Dec  6 08:48 RLMObjectSchema.h
+-r--r--r--    1 vorl  staff   2811 Dec  6 08:48 RLMObjectSchema_Private.h
+-rw-r--r--    1 vorl  staff   1299 Dec  6 08:48 RLMObjectSchema_Private.hpp
+-r--r--r--    1 vorl  staff   2670 Dec  6 08:48 RLMObjectStore.h
+-r--r--r--    1 vorl  staff   5643 Dec  6 08:48 RLMObject_Private.h
+-rw-r--r--    1 vorl  staff   2083 Dec  6 08:48 RLMObject_Private.hpp
+-rw-r--r--    1 vorl  staff   6570 Dec  6 08:48 RLMObservation.hpp
+-r--r--r--    1 vorl  staff   1292 Dec  6 08:48 RLMOptionalBase.h
+-r--r--r--    1 vorl  staff      1 Dec  6 08:48 RLMPlatform.h
+-rw-r--r--    1 vorl  staff    863 Dec  6 08:48 RLMPredicateUtil.hpp
+-rw-r--r--    1 vorl  staff   1052 Dec  6 08:48 RLMPrefix.h
+-r--r--r--    1 vorl  staff   3240 Dec  6 08:48 RLMProperty.h
+-r--r--r--    1 vorl  staff   5060 Dec  6 08:48 RLMProperty_Private.h
+-rw-r--r--    1 vorl  staff   1015 Dec  6 08:48 RLMProperty_Private.hpp
+-rw-r--r--    1 vorl  staff   1418 Dec  6 08:48 RLMQueryUtil.hpp
+-r--r--r--    1 vorl  staff   1845 Dec  6 08:48 RLMRealm+Sync.h
+-r--r--r--    1 vorl  staff  30415 Dec  6 08:48 RLMRealm.h
+-r--r--r--    1 vorl  staff   1376 Dec  6 08:48 RLMRealmConfiguration+Sync.h
+-r--r--r--    1 vorl  staff   5103 Dec  6 08:48 RLMRealmConfiguration.h
+-r--r--r--    1 vorl  staff   1648 Dec  6 08:48 RLMRealmConfiguration_Private.h
+-rw-r--r--    1 vorl  staff    941 Dec  6 08:48 RLMRealmConfiguration_Private.hpp
+-rw-r--r--    1 vorl  staff   1420 Dec  6 08:48 RLMRealmUtil.hpp
+-r--r--r--    1 vorl  staff   4841 Dec  6 08:48 RLMRealm_Dynamic.h
+-r--r--r--    1 vorl  staff   1715 Dec  6 08:48 RLMRealm_Private.h
+-rw-r--r--    1 vorl  staff   1061 Dec  6 08:48 RLMRealm_Private.hpp
+-r--r--r--    1 vorl  staff  13313 Dec  6 08:48 RLMResults.h
+-r--r--r--    1 vorl  staff    983 Dec  6 08:48 RLMResults_Private.h
+-rw-r--r--    1 vorl  staff   1917 Dec  6 08:48 RLMResults_Private.hpp
+-r--r--r--    1 vorl  staff   2328 Dec  6 08:48 RLMSchema.h
+-r--r--r--    1 vorl  staff   1741 Dec  6 08:48 RLMSchema_Private.h
+-rw-r--r--    1 vorl  staff   1011 Dec  6 08:48 RLMSchema_Private.hpp
+-rw-r--r--    1 vorl  staff   1654 Dec  6 08:48 RLMSwiftBridgingHeader.h
+-rw-r--r--    1 vorl  staff    975 Dec  6 08:48 RLMSwiftSupport.h
+-r--r--r--    1 vorl  staff   5088 Dec  6 08:48 RLMSyncConfiguration.h
+-r--r--r--    1 vorl  staff   1558 Dec  6 08:48 RLMSyncConfiguration_Private.h
+-rw-r--r--    1 vorl  staff   1519 Dec  6 08:48 RLMSyncConfiguration_Private.hpp
+-r--r--r--    1 vorl  staff   5328 Dec  6 08:48 RLMSyncCredentials.h
+-r--r--r--    1 vorl  staff   5930 Dec  6 08:48 RLMSyncManager.h
+-rw-r--r--    1 vorl  staff   1693 Dec  6 08:48 RLMSyncManager_Private.h
+-r--r--r--    1 vorl  staff  21977 Dec  6 08:48 RLMSyncPermission.h
+-rw-r--r--    1 vorl  staff    944 Dec  6 08:48 RLMSyncPermissionResults.h
+-rw-r--r--    1 vorl  staff    953 Dec  6 08:48 RLMSyncPermission_Private.hpp
+-r--r--r--    1 vorl  staff   9353 Dec  6 08:48 RLMSyncSession.h
+-rw-r--r--    1 vorl  staff   1059 Dec  6 08:48 RLMSyncSessionRefreshHandle.h
+-rw-r--r--    1 vorl  staff   1303 Dec  6 08:48 RLMSyncSessionRefreshHandle.hpp
+-rw-r--r--    1 vorl  staff   1748 Dec  6 08:48 RLMSyncSession_Private.hpp
+-r--r--r--    1 vorl  staff   7502 Dec  6 08:48 RLMSyncSubscription.h
+-r--r--r--    1 vorl  staff  23065 Dec  6 08:48 RLMSyncUser.h
+-rw-r--r--    1 vorl  staff   2527 Dec  6 08:48 RLMSyncUser_Private.hpp
+-r--r--r--    1 vorl  staff   9379 Dec  6 08:48 RLMSyncUtil.h
+-r--r--r--    1 vorl  staff   5068 Dec  6 08:48 RLMSyncUtil_Private.h
+-rw-r--r--    1 vorl  staff   2928 Dec  6 08:48 RLMSyncUtil_Private.hpp
+-r--r--r--    1 vorl  staff   4187 Dec  6 08:48 RLMThreadSafeReference.h
+-rw-r--r--    1 vorl  staff   1629 Dec  6 08:48 RLMThreadSafeReference_Private.hpp
+-rw-r--r--    1 vorl  staff    842 Dec  6 08:48 RLMUpdateChecker.hpp
+-rw-r--r--    1 vorl  staff   6856 Dec  6 08:48 RLMUtil.hpp
+-r--r--r--    1 vorl  staff   1470 Dec  6 08:48 Realm.h
+-rw-r--r--    1 vorl  staff   1650 Dec  6 08:48 binding_callback_thread_observer.hpp
+-rw-r--r--    1 vorl  staff   8037 Dec  6 08:48 binding_context.hpp
+-rw-r--r--    1 vorl  staff   6900 Dec  6 08:48 collection_notifications.hpp
+drwxr-xr-x    4 vorl  staff    128 Dec  6 08:48 core
+-rw-r--r--    1 vorl  staff   4017 Dec  6 08:48 execution_context_id.hpp
+-rw-r--r--    1 vorl  staff    972 Dec  6 08:48 feature_checks.hpp
+drwxr-xr-x   15 vorl  staff    480 Dec  6 08:48 impl
+-rw-r--r--    1 vorl  staff  11096 Dec  6 08:48 index_set.hpp
+-rw-r--r--    1 vorl  staff   8871 Dec  6 08:48 list.hpp
+-rw-r--r--    1 vorl  staff   6080 Dec  6 08:48 object.hpp
+-rw-r--r--    1 vorl  staff  15256 Dec  6 08:48 object_accessor.hpp
+-rw-r--r--    1 vorl  staff   2419 Dec  6 08:48 object_schema.hpp
+-rw-r--r--    1 vorl  staff   7566 Dec  6 08:48 object_store.hpp
+-rw-r--r--    1 vorl  staff   7986 Dec  6 08:48 property.hpp
+-rw-r--r--    1 vorl  staff  13477 Dec  6 08:48 results.hpp
+-rw-r--r--    1 vorl  staff   4929 Dec  6 08:48 schema.hpp
+-rw-r--r--    1 vorl  staff  21644 Dec  6 08:48 shared_realm.hpp
+drwxr-xr-x   10 vorl  staff    320 Dec  6 08:48 sync
+-rw-r--r--    1 vorl  staff   3758 Dec  6 08:48 thread_safe_reference.hpp
+drwxr-xr-x    8 vorl  staff    256 Dec  6 08:48 util
+
+./Pods/Realm/include/core:
+total 8
+drwxr-xr-x    4 vorl  staff   128 Dec  6 08:48 .
+drwxr-xr-x  100 vorl  staff  3200 Dec  6 08:48 ..
+drwxr-xr-x   76 vorl  staff  2432 Dec  6 08:48 realm
+-rw-r--r--    1 vorl  staff  1028 Dec  6 08:48 realm.hpp
+
+./Pods/Realm/include/core/realm:
+total 2808
+drwxr-xr-x  76 vorl  staff    2432 Dec  6 08:48 .
+drwxr-xr-x   4 vorl  staff     128 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff   11780 Dec  6 08:48 alloc.hpp
+-rw-r--r--   1 vorl  staff   26156 Dec  6 08:48 alloc_slab.hpp
+-rw-r--r--   1 vorl  staff  123744 Dec  6 08:48 array.hpp
+-rw-r--r--   1 vorl  staff    4410 Dec  6 08:48 array_basic.hpp
+-rw-r--r--   1 vorl  staff   13118 Dec  6 08:48 array_basic_tpl.hpp
+-rw-r--r--   1 vorl  staff    8563 Dec  6 08:48 array_binary.hpp
+-rw-r--r--   1 vorl  staff    4482 Dec  6 08:48 array_blob.hpp
+-rw-r--r--   1 vorl  staff    7379 Dec  6 08:48 array_blobs_big.hpp
+-rw-r--r--   1 vorl  staff   13927 Dec  6 08:48 array_direct.hpp
+-rw-r--r--   1 vorl  staff   19709 Dec  6 08:48 array_integer.hpp
+-rw-r--r--   1 vorl  staff    6238 Dec  6 08:48 array_string.hpp
+-rw-r--r--   1 vorl  staff    6599 Dec  6 08:48 array_string_long.hpp
+-rw-r--r--   1 vorl  staff    6970 Dec  6 08:48 binary_data.hpp
+-rw-r--r--   1 vorl  staff   42597 Dec  6 08:48 bptree.hpp
+-rw-r--r--   1 vorl  staff    3782 Dec  6 08:48 chunked_binary.hpp
+-rw-r--r--   1 vorl  staff   56486 Dec  6 08:48 column.hpp
+-rw-r--r--   1 vorl  staff    7643 Dec  6 08:48 column_backlink.hpp
+-rw-r--r--   1 vorl  staff   14070 Dec  6 08:48 column_binary.hpp
+-rw-r--r--   1 vorl  staff    1543 Dec  6 08:48 column_fwd.hpp
+-rw-r--r--   1 vorl  staff    5868 Dec  6 08:48 column_link.hpp
+-rw-r--r--   1 vorl  staff    6111 Dec  6 08:48 column_linkbase.hpp
+-rw-r--r--   1 vorl  staff    8386 Dec  6 08:48 column_linklist.hpp
+-rw-r--r--   1 vorl  staff   10093 Dec  6 08:48 column_mixed.hpp
+-rw-r--r--   1 vorl  staff   16549 Dec  6 08:48 column_mixed_tpl.hpp
+-rw-r--r--   1 vorl  staff   12907 Dec  6 08:48 column_string.hpp
+-rw-r--r--   1 vorl  staff   10691 Dec  6 08:48 column_string_enum.hpp
+-rw-r--r--   1 vorl  staff   25646 Dec  6 08:48 column_table.hpp
+-rw-r--r--   1 vorl  staff    6093 Dec  6 08:48 column_timestamp.hpp
+-rw-r--r--   1 vorl  staff    4562 Dec  6 08:48 column_tpl.hpp
+-rw-r--r--   1 vorl  staff    2001 Dec  6 08:48 column_type.hpp
+-rw-r--r--   1 vorl  staff    4701 Dec  6 08:48 column_type_traits.hpp
+-rw-r--r--   1 vorl  staff    1816 Dec  6 08:48 data_type.hpp
+-rw-r--r--   1 vorl  staff   31328 Dec  6 08:48 descriptor.hpp
+-rw-r--r--   1 vorl  staff    1037 Dec  6 08:48 descriptor_fwd.hpp
+-rw-r--r--   1 vorl  staff    1307 Dec  6 08:48 disable_sync_to_disk.hpp
+-rw-r--r--   1 vorl  staff   11358 Dec  6 08:48 exceptions.hpp
+-rw-r--r--   1 vorl  staff   56382 Dec  6 08:48 group.hpp
+-rw-r--r--   1 vorl  staff   48754 Dec  6 08:48 group_shared.hpp
+-rw-r--r--   1 vorl  staff    4341 Dec  6 08:48 group_shared_options.hpp
+-rw-r--r--   1 vorl  staff    7249 Dec  6 08:48 group_writer.hpp
+-rw-r--r--   1 vorl  staff    2569 Dec  6 08:48 handover_defs.hpp
+-rw-r--r--   1 vorl  staff    1021 Dec  6 08:48 history.hpp
+drwxr-xr-x  12 vorl  staff     384 Dec  6 08:48 impl
+-rw-r--r--   1 vorl  staff   21104 Dec  6 08:48 index_string.hpp
+-rw-r--r--   1 vorl  staff   14778 Dec  6 08:48 lang_bind_helper.hpp
+-rw-r--r--   1 vorl  staff   12388 Dec  6 08:48 link_view.hpp
+-rw-r--r--   1 vorl  staff    1023 Dec  6 08:48 link_view_fwd.hpp
+drwxr-xr-x   6 vorl  staff     192 Dec  6 08:48 metrics
+-rw-r--r--   1 vorl  staff   18628 Dec  6 08:48 mixed.hpp
+-rw-r--r--   1 vorl  staff    5340 Dec  6 08:48 null.hpp
+-rw-r--r--   1 vorl  staff    4849 Dec  6 08:48 olddatetime.hpp
+-rw-r--r--   1 vorl  staff    2560 Dec  6 08:48 owned_data.hpp
+drwxr-xr-x  11 vorl  staff     352 Dec  6 08:48 parser
+-rw-r--r--   1 vorl  staff   18856 Dec  6 08:48 query.hpp
+-rw-r--r--   1 vorl  staff   24037 Dec  6 08:48 query_conditions.hpp
+-rw-r--r--   1 vorl  staff   68503 Dec  6 08:48 query_engine.hpp
+-rw-r--r--   1 vorl  staff  122638 Dec  6 08:48 query_expression.hpp
+-rw-r--r--   1 vorl  staff    1724 Dec  6 08:48 query_operators.hpp
+-rw-r--r--   1 vorl  staff    6275 Dec  6 08:48 realm_nmmintrin.h
+-rw-r--r--   1 vorl  staff   22245 Dec  6 08:48 replication.hpp
+-rw-r--r--   1 vorl  staff   26027 Dec  6 08:48 row.hpp
+-rw-r--r--   1 vorl  staff   12704 Dec  6 08:48 spec.hpp
+-rw-r--r--   1 vorl  staff   12722 Dec  6 08:48 string_data.hpp
+drwxr-xr-x  20 vorl  staff     640 Dec  6 08:48 sync
+-rw-r--r--   1 vorl  staff  112538 Dec  6 08:48 table.hpp
+-rw-r--r--   1 vorl  staff   13091 Dec  6 08:48 table_ref.hpp
+-rw-r--r--   1 vorl  staff   61630 Dec  6 08:48 table_view.hpp
+-rw-r--r--   1 vorl  staff    5662 Dec  6 08:48 timestamp.hpp
+-rw-r--r--   1 vorl  staff    7176 Dec  6 08:48 unicode.hpp
+drwxr-xr-x  67 vorl  staff    2144 Dec  6 08:48 util
+-rw-r--r--   1 vorl  staff    9358 Dec  6 08:48 utilities.hpp
+-rw-r--r--   1 vorl  staff    1820 Dec  6 08:48 version.hpp
+-rw-r--r--   1 vorl  staff    1901 Dec  6 08:48 version_id.hpp
+-rw-r--r--   1 vorl  staff    8433 Dec  6 08:48 views.hpp
+
+./Pods/Realm/include/core/realm/impl:
+total 320
+drwxr-xr-x  12 vorl  staff     384 Dec  6 08:48 .
+drwxr-xr-x  76 vorl  staff    2432 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff    1316 Dec  6 08:48 array_writer.hpp
+-rw-r--r--   1 vorl  staff    1549 Dec  6 08:48 clamped_hex_dump.hpp
+-rw-r--r--   1 vorl  staff    1743 Dec  6 08:48 clock.hpp
+-rw-r--r--   1 vorl  staff    7266 Dec  6 08:48 cont_transact_hist.hpp
+-rw-r--r--   1 vorl  staff    5237 Dec  6 08:48 destroy_guard.hpp
+-rw-r--r--   1 vorl  staff    7557 Dec  6 08:48 input_stream.hpp
+-rw-r--r--   1 vorl  staff    1753 Dec  6 08:48 output_stream.hpp
+-rw-r--r--   1 vorl  staff    4191 Dec  6 08:48 sequential_getter.hpp
+-rw-r--r--   1 vorl  staff    6282 Dec  6 08:48 simulated_failure.hpp
+-rw-r--r--   1 vorl  staff  103076 Dec  6 08:48 transact_log.hpp
+
+./Pods/Realm/include/core/realm/metrics:
+total 32
+drwxr-xr-x   6 vorl  staff   192 Dec  6 08:48 .
+drwxr-xr-x  76 vorl  staff  2432 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff  2545 Dec  6 08:48 metric_timer.hpp
+-rw-r--r--   1 vorl  staff  2351 Dec  6 08:48 metrics.hpp
+-rw-r--r--   1 vorl  staff  1838 Dec  6 08:48 query_info.hpp
+-rw-r--r--   1 vorl  staff  2271 Dec  6 08:48 transaction_info.hpp
+
+./Pods/Realm/include/core/realm/parser:
+total 96
+drwxr-xr-x  11 vorl  staff    352 Dec  6 08:48 .
+drwxr-xr-x  76 vorl  staff   2432 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff  10945 Dec  6 08:48 collection_operator_expression.hpp
+-rw-r--r--   1 vorl  staff   2659 Dec  6 08:48 expression_container.hpp
+-rw-r--r--   1 vorl  staff   2587 Dec  6 08:48 keypath_mapping.hpp
+-rw-r--r--   1 vorl  staff   3605 Dec  6 08:48 parser.hpp
+-rw-r--r--   1 vorl  staff   2531 Dec  6 08:48 parser_utils.hpp
+-rw-r--r--   1 vorl  staff   2194 Dec  6 08:48 property_expression.hpp
+-rw-r--r--   1 vorl  staff   5641 Dec  6 08:48 query_builder.hpp
+-rw-r--r--   1 vorl  staff   3670 Dec  6 08:48 subquery_expression.hpp
+-rw-r--r--   1 vorl  staff   1324 Dec  6 08:48 value_expression.hpp
+
+./Pods/Realm/include/core/realm/sync:
+total 448
+drwxr-xr-x  20 vorl  staff    640 Dec  6 08:48 .
+drwxr-xr-x  76 vorl  staff   2432 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff  21513 Dec  6 08:48 changeset.hpp
+-rw-r--r--   1 vorl  staff   1331 Dec  6 08:48 changeset_cooker.hpp
+-rw-r--r--   1 vorl  staff   4035 Dec  6 08:48 changeset_encoder.hpp
+-rw-r--r--   1 vorl  staff   1495 Dec  6 08:48 changeset_parser.hpp
+-rw-r--r--   1 vorl  staff  57238 Dec  6 08:48 client.hpp
+-rw-r--r--   1 vorl  staff   1828 Dec  6 08:48 crypto.hpp
+-rw-r--r--   1 vorl  staff   2998 Dec  6 08:48 crypto_server.hpp
+-rw-r--r--   1 vorl  staff   1883 Dec  6 08:48 feature_token.hpp
+-rw-r--r--   1 vorl  staff  18765 Dec  6 08:48 history.hpp
+-rw-r--r--   1 vorl  staff   3755 Dec  6 08:48 instruction_applier.hpp
+-rw-r--r--   1 vorl  staff   9436 Dec  6 08:48 instruction_replication.hpp
+-rw-r--r--   1 vorl  staff  11595 Dec  6 08:48 instructions.hpp
+-rw-r--r--   1 vorl  staff   9687 Dec  6 08:48 object.hpp
+-rw-r--r--   1 vorl  staff  10009 Dec  6 08:48 object_id.hpp
+-rw-r--r--   1 vorl  staff  14995 Dec  6 08:48 permissions.hpp
+-rw-r--r--   1 vorl  staff  11665 Dec  6 08:48 protocol.hpp
+-rw-r--r--   1 vorl  staff  12827 Dec  6 08:48 transform.hpp
+-rw-r--r--   1 vorl  staff   1306 Dec  6 08:48 version.hpp
+
+./Pods/Realm/include/core/realm/util:
+total 1472
+drwxr-xr-x  67 vorl  staff    2144 Dec  6 08:48 .
+drwxr-xr-x  76 vorl  staff    2432 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff    2716 Dec  6 08:48 aes_cryptor.hpp
+-rw-r--r--   1 vorl  staff    5557 Dec  6 08:48 allocation_metrics.hpp
+-rw-r--r--   1 vorl  staff   12180 Dec  6 08:48 allocator.hpp
+-rw-r--r--   1 vorl  staff    4535 Dec  6 08:48 any.hpp
+-rw-r--r--   1 vorl  staff    5931 Dec  6 08:48 assert.hpp
+-rw-r--r--   1 vorl  staff    7475 Dec  6 08:48 backtrace.hpp
+-rw-r--r--   1 vorl  staff    3136 Dec  6 08:48 base64.hpp
+-rw-r--r--   1 vorl  staff    2159 Dec  6 08:48 basic_system_errors.hpp
+-rw-r--r--   1 vorl  staff    9898 Dec  6 08:48 bind_ptr.hpp
+-rw-r--r--   1 vorl  staff    8888 Dec  6 08:48 buffer.hpp
+-rw-r--r--   1 vorl  staff    4621 Dec  6 08:48 buffer_stream.hpp
+-rw-r--r--   1 vorl  staff    1988 Dec  6 08:48 call_with_tuple.hpp
+-rw-r--r--   1 vorl  staff    2192 Dec  6 08:48 cf_ptr.hpp
+-rw-r--r--   1 vorl  staff   30546 Dec  6 08:48 circular_buffer.hpp
+-rw-r--r--   1 vorl  staff    4989 Dec  6 08:48 compression.hpp
+-rw-r--r--   1 vorl  staff     636 Dec  6 08:48 config.h
+-rw-r--r--   1 vorl  staff    1533 Dec  6 08:48 demangle.hpp
+-rw-r--r--   1 vorl  staff    6314 Dec  6 08:48 encrypted_file_mapping.hpp
+-rw-r--r--   1 vorl  staff    5996 Dec  6 08:48 enum.hpp
+-rw-r--r--   1 vorl  staff    1160 Dec  6 08:48 errno.hpp
+-rw-r--r--   1 vorl  staff    8972 Dec  6 08:48 features.h
+-rw-r--r--   1 vorl  staff   41047 Dec  6 08:48 file.hpp
+-rw-r--r--   1 vorl  staff    4319 Dec  6 08:48 file_mapper.hpp
+-rw-r--r--   1 vorl  staff    5636 Dec  6 08:48 flat_map.hpp
+-rw-r--r--   1 vorl  staff    1358 Dec  6 08:48 get_file_size.hpp
+-rw-r--r--   1 vorl  staff    1615 Dec  6 08:48 hex_dump.hpp
+-rw-r--r--   1 vorl  staff   17323 Dec  6 08:48 http.hpp
+-rw-r--r--   1 vorl  staff    2018 Dec  6 08:48 inspect.hpp
+-rw-r--r--   1 vorl  staff    5655 Dec  6 08:48 interprocess_condvar.hpp
+-rw-r--r--   1 vorl  staff   11087 Dec  6 08:48 interprocess_mutex.hpp
+-rw-r--r--   1 vorl  staff   15657 Dec  6 08:48 json_parser.hpp
+-rw-r--r--   1 vorl  staff    1210 Dec  6 08:48 load_file.hpp
+-rw-r--r--   1 vorl  staff   14865 Dec  6 08:48 logger.hpp
+-rw-r--r--   1 vorl  staff    5251 Dec  6 08:48 memory_stream.hpp
+drwxr-xr-x   9 vorl  staff     288 Dec  6 08:48 metered
+-rw-r--r--   1 vorl  staff    1237 Dec  6 08:48 misc_errors.hpp
+-rw-r--r--   1 vorl  staff    2065 Dec  6 08:48 misc_ext_errors.hpp
+-rw-r--r--   1 vorl  staff    1521 Dec  6 08:48 miscellaneous.hpp
+-rw-r--r--   1 vorl  staff  130217 Dec  6 08:48 network.hpp
+-rw-r--r--   1 vorl  staff   50030 Dec  6 08:48 network_ssl.hpp
+-rw-r--r--   1 vorl  staff   15718 Dec  6 08:48 optional.hpp
+-rw-r--r--   1 vorl  staff    1849 Dec  6 08:48 overload.hpp
+-rw-r--r--   1 vorl  staff    1217 Dec  6 08:48 parent_dir.hpp
+-rw-r--r--   1 vorl  staff    1933 Dec  6 08:48 platform_info.hpp
+-rw-r--r--   1 vorl  staff    9970 Dec  6 08:48 priority_queue.hpp
+-rw-r--r--   1 vorl  staff    5173 Dec  6 08:48 random.hpp
+-rw-r--r--   1 vorl  staff    2995 Dec  6 08:48 resource_limits.hpp
+-rw-r--r--   1 vorl  staff   21782 Dec  6 08:48 safe_int_ops.hpp
+-rw-r--r--   1 vorl  staff    2122 Dec  6 08:48 scope_exit.hpp
+-rw-r--r--   1 vorl  staff    2459 Dec  6 08:48 serializer.hpp
+-rw-r--r--   1 vorl  staff    2362 Dec  6 08:48 shared_ptr.hpp
+-rw-r--r--   1 vorl  staff    2257 Dec  6 08:48 signal_blocker.hpp
+-rw-r--r--   1 vorl  staff    6150 Dec  6 08:48 string_buffer.hpp
+-rw-r--r--   1 vorl  staff    6948 Dec  6 08:48 system_process.hpp
+-rw-r--r--   1 vorl  staff    2281 Dec  6 08:48 terminate.hpp
+-rw-r--r--   1 vorl  staff   20106 Dec  6 08:48 thread.hpp
+-rw-r--r--   1 vorl  staff   10142 Dec  6 08:48 thread_exec_guard.hpp
+-rw-r--r--   1 vorl  staff    2943 Dec  6 08:48 time.hpp
+-rw-r--r--   1 vorl  staff    2750 Dec  6 08:48 to_string.hpp
+-rw-r--r--   1 vorl  staff    7653 Dec  6 08:48 type_list.hpp
+-rw-r--r--   1 vorl  staff    4901 Dec  6 08:48 type_traits.hpp
+-rw-r--r--   1 vorl  staff    8634 Dec  6 08:48 uri.hpp
+-rw-r--r--   1 vorl  staff   15593 Dec  6 08:48 utf8.hpp
+-rw-r--r--   1 vorl  staff    2330 Dec  6 08:48 value_reset_guard.hpp
+-rw-r--r--   1 vorl  staff   12086 Dec  6 08:48 websocket.hpp
+
+./Pods/Realm/include/core/realm/util/metered:
+total 56
+drwxr-xr-x   9 vorl  staff   288 Dec  6 08:48 .
+drwxr-xr-x  67 vorl  staff  2144 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff  1225 Dec  6 08:48 deque.hpp
+-rw-r--r--   1 vorl  staff  1438 Dec  6 08:48 map.hpp
+-rw-r--r--   1 vorl  staff  1376 Dec  6 08:48 set.hpp
+-rw-r--r--   1 vorl  staff  1227 Dec  6 08:48 string.hpp
+-rw-r--r--   1 vorl  staff  1430 Dec  6 08:48 unordered_map.hpp
+-rw-r--r--   1 vorl  staff  1388 Dec  6 08:48 unordered_set.hpp
+-rw-r--r--   1 vorl  staff  1231 Dec  6 08:48 vector.hpp
+
+./Pods/Realm/include/impl:
+total 152
+drwxr-xr-x   15 vorl  staff    480 Dec  6 08:48 .
+drwxr-xr-x  100 vorl  staff   3200 Dec  6 08:48 ..
+drwxr-xr-x    4 vorl  staff    128 Dec  6 08:48 apple
+-rw-r--r--    1 vorl  staff   3499 Dec  6 08:48 collection_change_builder.hpp
+-rw-r--r--    1 vorl  staff  12483 Dec  6 08:48 collection_notifier.hpp
+-rw-r--r--    1 vorl  staff   1424 Dec  6 08:48 external_commit_helper.hpp
+-rw-r--r--    1 vorl  staff   1890 Dec  6 08:48 list_notifier.hpp
+-rw-r--r--    1 vorl  staff   1534 Dec  6 08:48 notification_wrapper.hpp
+-rw-r--r--    1 vorl  staff   8946 Dec  6 08:48 object_accessor_impl.hpp
+-rw-r--r--    1 vorl  staff   1662 Dec  6 08:48 object_notifier.hpp
+-rw-r--r--    1 vorl  staff   1938 Dec  6 08:48 primitive_list_notifier.hpp
+-rw-r--r--    1 vorl  staff   8518 Dec  6 08:48 realm_coordinator.hpp
+-rw-r--r--    1 vorl  staff   2861 Dec  6 08:48 results_notifier.hpp
+-rw-r--r--    1 vorl  staff   2353 Dec  6 08:48 transact_log_handler.hpp
+-rw-r--r--    1 vorl  staff   2599 Dec  6 08:48 weak_realm_notifier.hpp
+
+./Pods/Realm/include/impl/apple:
+total 16
+drwxr-xr-x   4 vorl  staff   128 Dec  6 08:48 .
+drwxr-xr-x  15 vorl  staff   480 Dec  6 08:48 ..
+-rw-r--r--   1 vorl  staff  2306 Dec  6 08:48 external_commit_helper.hpp
+-rw-r--r--   1 vorl  staff  1160 Dec  6 08:48 keychain_helper.hpp
+
+./Pods/Realm/include/sync:
+total 120
+drwxr-xr-x   10 vorl  staff    320 Dec  6 08:48 .
+drwxr-xr-x  100 vorl  staff   3200 Dec  6 08:48 ..
+drwxr-xr-x    8 vorl  staff    256 Dec  6 08:48 impl
+-rw-r--r--    1 vorl  staff   3710 Dec  6 08:48 partial_sync.hpp
+-rw-r--r--    1 vorl  staff   1500 Dec  6 08:48 subscription_state.hpp
+-rw-r--r--    1 vorl  staff   6182 Dec  6 08:48 sync_config.hpp
+-rw-r--r--    1 vorl  staff  10033 Dec  6 08:48 sync_manager.hpp
+-rw-r--r--    1 vorl  staff   6843 Dec  6 08:48 sync_permission.hpp
+-rw-r--r--    1 vorl  staff  16227 Dec  6 08:48 sync_session.hpp
+-rw-r--r--    1 vorl  staff   6463 Dec  6 08:48 sync_user.hpp
+
+./Pods/Realm/include/sync/impl:
+total 64
+drwxr-xr-x   8 vorl  staff   256 Dec  6 08:48 .
+drwxr-xr-x  10 vorl  staff   320 Dec  6 08:48 ..
+drwxr-xr-x   4 vorl  staff   128 Dec  6 08:48 apple
+-rw-r--r--   1 vorl  staff  1041 Dec  6 08:48 network_reachability.hpp
+-rw-r--r--   1 vorl  staff  3814 Dec  6 08:48 sync_client.hpp
+-rw-r--r--   1 vorl  staff  4936 Dec  6 08:48 sync_file.hpp
+-rw-r--r--   1 vorl  staff  8446 Dec  6 08:48 sync_metadata.hpp
+-rw-r--r--   1 vorl  staff  1433 Dec  6 08:48 work_queue.hpp
+
+./Pods/Realm/include/sync/impl/apple:
+total 16
+drwxr-xr-x  4 vorl  staff   128 Dec  6 08:48 .
+drwxr-xr-x  8 vorl  staff   256 Dec  6 08:48 ..
+-rw-r--r--  1 vorl  staff  2003 Dec  6 08:48 network_reachability_observer.hpp
+-rw-r--r--  1 vorl  staff  3013 Dec  6 08:48 system_configuration.hpp
+
+./Pods/Realm/include/util:
+total 48
+drwxr-xr-x    8 vorl  staff   256 Dec  6 08:48 .
+drwxr-xr-x  100 vorl  staff  3200 Dec  6 08:48 ..
+-rw-r--r--    1 vorl  staff  2002 Dec  6 08:48 aligned_union.hpp
+drwxr-xr-x    3 vorl  staff    96 Dec  6 08:48 apple
+-rw-r--r--    1 vorl  staff  4365 Dec  6 08:48 atomic_shared_ptr.hpp
+-rw-r--r--    1 vorl  staff  1489 Dec  6 08:48 event_loop_signal.hpp
+-rw-r--r--    1 vorl  staff  2255 Dec  6 08:48 tagged_bool.hpp
+-rw-r--r--    1 vorl  staff  1039 Dec  6 08:48 uuid.hpp
+
+./Pods/Realm/include/util/apple:
+total 8
+drwxr-xr-x  3 vorl  staff    96 Dec  6 08:48 .
+drwxr-xr-x  8 vorl  staff   256 Dec  6 08:48 ..
+-rw-r--r--  1 vorl  staff  2781 Dec  6 08:48 event_loop_signal.hpp
+
+./Pods/RealmSwift:
+total 152
+drwxr-xr-x   7 vorl  staff    224 Dec  6 08:49 .
+drwxr-xr-x   9 vorl  staff    288 Dec  6 08:49 ..
+-rw-r--r--   1 vorl  staff  13657 Dec  6 08:49 LICENSE
+-rw-r--r--   1 vorl  staff   4256 Dec  6 08:49 README.md
+drwxr-xr-x   2 vorl  staff     64 Dec  6 08:49 Realm
+drwxr-xr-x  22 vorl  staff    704 Dec  6 08:49 RealmSwift
+-rwxr-xr-x   1 vorl  staff  50944 Dec  6 08:49 build.sh
+
+./Pods/RealmSwift/Realm:
+total 0
+drwxr-xr-x  2 vorl  staff   64 Dec  6 08:49 .
+drwxr-xr-x  7 vorl  staff  224 Dec  6 08:49 ..
+
+./Pods/RealmSwift/RealmSwift:
+total 640
+drwxr-xr-x  22 vorl  staff    704 Dec  6 08:49 .
+drwxr-xr-x   7 vorl  staff    224 Dec  6 08:49 ..
+-r--r--r--   1 vorl  staff   1656 Dec  6 08:49 Aliases.swift
+-r--r--r--   1 vorl  staff   5268 Dec  6 08:49 Error.swift
+-r--r--r--   1 vorl  staff  18439 Dec  6 08:49 LinkingObjects.swift
+-r--r--r--   1 vorl  staff  27508 Dec  6 08:49 List.swift
+-r--r--r--   1 vorl  staff   8391 Dec  6 08:49 Migration.swift
+-r--r--r--   1 vorl  staff  21099 Dec  6 08:49 Object.swift
+-r--r--r--   1 vorl  staff   2662 Dec  6 08:49 ObjectSchema.swift
+-r--r--r--   1 vorl  staff   5935 Dec  6 08:49 ObjectiveCSupport.swift
+-r--r--r--   1 vorl  staff   2200 Dec  6 08:49 Optional.swift
+-r--r--r--   1 vorl  staff   2613 Dec  6 08:49 Property.swift
+-r--r--r--   1 vorl  staff  31482 Dec  6 08:49 Realm.swift
+-r--r--r--   1 vorl  staff  44189 Dec  6 08:49 RealmCollection.swift
+-r--r--r--   1 vorl  staff  12975 Dec  6 08:49 RealmConfiguration.swift
+-r--r--r--   1 vorl  staff  16815 Dec  6 08:49 Results.swift
+-r--r--r--   1 vorl  staff   2285 Dec  6 08:49 Schema.swift
+-r--r--r--   1 vorl  staff   4058 Dec  6 08:49 SortDescriptor.swift
+-r--r--r--   1 vorl  staff     35 Dec  6 08:49 SwiftVersion.swift
+-r--r--r--   1 vorl  staff  64477 Dec  6 08:49 Sync.swift
+-r--r--r--   1 vorl  staff   4980 Dec  6 08:49 ThreadSafeReference.swift
+-r--r--r--   1 vorl  staff   5445 Dec  6 08:49 Util.swift
+
+./Pods/Target Support Files:
+total 0
+drwxr-xr-x   5 vorl  staff  160 Dec  6 08:49 .
+drwxr-xr-x   9 vorl  staff  288 Dec  6 08:49 ..
+drwxr-xr-x  12 vorl  staff  384 Dec  3 19:17 Pods-y_project
+drwxr-xr-x   7 vorl  staff  224 Dec  6 08:49 Realm
+drwxr-xr-x   8 vorl  staff  256 Dec  6 08:49 RealmSwift
+
+./Pods/Target Support Files/Pods-y_project:
+total 192
+drwxr-xr-x  12 vorl  staff    384 Dec  3 19:17 .
+drwxr-xr-x   5 vorl  staff    160 Dec  6 08:49 ..
+-rw-r--r--   1 vorl  staff    828 Nov 12 12:35 Info.plist
+-rw-r--r--   1 vorl  staff  27476 Dec  3 19:17 Pods-y_project-acknowledgements.markdown
+-rw-r--r--   1 vorl  staff  28564 Dec  3 19:17 Pods-y_project-acknowledgements.plist
+-rw-r--r--   1 vorl  staff    132 Nov 12 12:35 Pods-y_project-dummy.m
+-rwxr-xr-x   1 vorl  staff   7135 Nov 12 12:35 Pods-y_project-frameworks.sh
+-rwxr-xr-x   1 vorl  staff   6335 Dec  3 19:17 Pods-y_project-resources.sh
+-rw-r--r--   1 vorl  staff    320 Nov 12 12:35 Pods-y_project-umbrella.h
+-rw-r--r--   1 vorl  staff    815 Dec  3 19:17 Pods-y_project.debug.xcconfig
+-rw-r--r--   1 vorl  staff    118 Nov 12 12:35 Pods-y_project.modulemap
+-rw-r--r--   1 vorl  staff    815 Dec  3 19:17 Pods-y_project.release.xcconfig
+
+./Pods/Target Support Files/Realm:
+total 40
+drwxr-xr-x  7 vorl  staff  224 Dec  6 08:49 .
+drwxr-xr-x  5 vorl  staff  160 Dec  6 08:49 ..
+-rw-r--r--  1 vorl  staff  829 Dec  6 08:49 Info.plist
+-rw-r--r--  1 vorl  staff  114 Nov 12 12:34 Realm-dummy.m
+-rw-r--r--  1 vorl  staff  195 Nov 12 12:34 Realm-prefix.pch
+-rw-r--r--  1 vorl  staff  904 Nov 12 12:34 Realm.modulemap
+-rw-r--r--  1 vorl  staff  833 Nov 12 12:34 Realm.xcconfig
+
+./Pods/Target Support Files/RealmSwift:
+total 48
+drwxr-xr-x  8 vorl  staff  256 Dec  6 08:49 .
+drwxr-xr-x  5 vorl  staff  160 Dec  6 08:49 ..
+-rw-r--r--  1 vorl  staff  829 Dec  6 08:49 Info.plist
+-rw-r--r--  1 vorl  staff  124 Nov 12 12:34 RealmSwift-dummy.m
+-rw-r--r--  1 vorl  staff  195 Nov 12 12:34 RealmSwift-prefix.pch
+-rw-r--r--  1 vorl  staff  312 Nov 12 12:34 RealmSwift-umbrella.h
+-rw-r--r--  1 vorl  staff  110 Nov 12 12:34 RealmSwift.modulemap
+-rw-r--r--  1 vorl  staff  576 Nov 12 12:34 RealmSwift.xcconfig
+
+./build:
+total 0
+drwxr-xr-x@  3 vorl  staff   96 Dec  3 19:13 .
+	com.apple.xcode.CreatedByBuildSystem	  4 
+drwxr-xr-x  10 vorl  staff  320 Dec  6 17:58 ..
+drwxr-xr-x   5 vorl  staff  160 Dec  3 19:13 XCBuildData
+
+./build/XCBuildData:
+total 6736
+drwxr-xr-x  5 vorl  staff      160 Dec  3 19:13 .
+drwxr-xr-x@ 3 vorl  staff       96 Dec  3 19:13 ..
+	com.apple.xcode.CreatedByBuildSystem	      4 
+-rw-r--r--  1 vorl  staff       44 Dec  3 19:13 BuildDescriptionCacheIndex-882a5258703c12346af27c5686429373
+-rw-r--r--  1 vorl  staff  1850379 Dec  3 19:13 ebfc7a2732ed9c57620d258efb589260-desc.xcbuild
+-rw-r--r--  1 vorl  staff  1590523 Dec  3 19:13 ebfc7a2732ed9c57620d258efb589260-manifest.xcbuild
+
+./y_project:
+total 144
+drwxr-xr-x  18 vorl  staff    576 Dec  6 17:47 .
+drwxr-xr-x  10 vorl  staff    320 Dec  6 17:58 ..
+-rw-r--r--   1 vorl  staff  10244 Dec  6 17:56 .DS_Store
+-rw-r--r--@  1 vorl  staff   2036 Dec  3 19:17 AppDelegate.swift
+	com.apple.lastuseddate#PS	   16 
+	com.apple.metadata:kMDLabel_aoakcijnpqsdga2w6xcgbodo6m	   89 
+drwxr-xr-x   4 vorl  staff    128 Dec  3 20:39 Assets.xcassets
+drwxr-xr-x   4 vorl  staff    128 Dec  3 18:15 Base.lproj
+-rw-r--r--@  1 vorl  staff    190 Nov 15 16:17 FloatingPoint+Extension.swift
+	com.apple.lastuseddate#PS	   16 
+-rw-r--r--@  1 vorl  staff   1957 Dec  6 17:53 Info.plist
+	com.apple.lastuseddate#PS	   16 
+	com.apple.xcode.PlistType	   53 
+-rw-r--r--@  1 vorl  staff   1281 Nov 15 16:17 Optional.swift
+	com.apple.lastuseddate#PS	   16 
+-rw-r--r--@  1 vorl  staff  10404 Dec  4 20:57 Server.swift
+	com.apple.lastuseddate#PS	   16 
+drwxr-xr-x   3 vorl  staff     96 Nov 15 16:17 Sounds
+-rw-r--r--@  1 vorl  staff    821 Nov 28 09:55 StoryViewController.swift
+	com.apple.lastuseddate#PS	   16 
+	com.apple.metadata:kMDLabel_aoakcijnpqsdga2w6xcgbodo6m	   89 
+-rw-r--r--@  1 vorl  staff   5257 Dec  6 17:47 Token.swift
+	com.apple.lastuseddate#PS	   16 
+	com.apple.metadata:kMDLabel_aoakcijnpqsdga2w6xcgbodo6m	   89 
+-rw-r--r--@  1 vorl  staff    178 Nov 15 16:17 Types.swift
+	com.apple.lastuseddate#PS	   16 
+-rw-r--r--@  1 vorl  staff    926 Dec  6 08:59 User.swift
+	com.apple.lastuseddate#PS	   16 
+-rw-r--r--@  1 vorl  staff   1301 Dec  4 20:20 UserViewController.swift
+	com.apple.lastuseddate#PS	   16 
+-rw-r--r--@  1 vorl  staff   6124 Dec  6 08:41 ViewController.swift
+	com.apple.lastuseddate#PS	   16 
+	com.apple.metadata:kMDLabel_aoakcijnpqsdga2w6xcgbodo6m	   89 
+drwxr-xr-x   6 vorl  staff    192 Dec  6 17:56 art.scnassets
+
+./y_project/Assets.xcassets:
+total 8
+drwxr-xr-x   4 vorl  staff  128 Dec  3 20:39 .
+drwxr-xr-x  18 vorl  staff  576 Dec  6 17:47 ..
+drwxr-xr-x  21 vorl  staff  672 Dec  3 20:39 AppIcon.appiconset
+-rw-r--r--   1 vorl  staff   62 Nov 15 16:17 Contents.json
+
+./y_project/Assets.xcassets/AppIcon.appiconset:
+total 1072
+drwxr-xr-x  21 vorl  staff     672 Dec  3 20:39 .
+drwxr-xr-x   4 vorl  staff     128 Dec  3 20:39 ..
+-rw-r--r--   1 vorl  staff    2391 Dec  3 20:39 Contents.json
+-rw-r--r--   1 vorl  staff    1381 Dec  3 18:14 Icon-App-20x20@1x.png
+-rw-r--r--   1 vorl  staff    3942 Dec  3 18:14 Icon-App-20x20@2x-1.png
+-rw-r--r--   1 vorl  staff    3942 Dec  3 18:13 Icon-App-20x20@2x.png
+-rw-r--r--   1 vorl  staff    8176 Dec  3 18:13 Icon-App-20x20@3x.png
+-rw-r--r--   1 vorl  staff    2400 Dec  3 18:14 Icon-App-29x29@1x.png
+-rw-r--r--   1 vorl  staff    7592 Dec  3 18:14 Icon-App-29x29@2x-1.png
+-rw-r--r--   1 vorl  staff    7592 Dec  3 18:13 Icon-App-29x29@2x.png
+-rw-r--r--   1 vorl  staff   13953 Dec  3 18:13 Icon-App-29x29@3x.png
+-rw-r--r--   1 vorl  staff    3942 Dec  3 18:14 Icon-App-40x40@1x.png
+-rw-r--r--   1 vorl  staff   12577 Dec  3 18:14 Icon-App-40x40@2x-1.png
+-rw-r--r--   1 vorl  staff   12577 Dec  3 18:13 Icon-App-40x40@2x.png
+-rw-r--r--   1 vorl  staff   23278 Dec  3 18:13 Icon-App-40x40@3x.png
+-rw-r--r--   1 vorl  staff   23278 Dec  3 18:14 Icon-App-60x60@2x.png
+-rw-r--r--   1 vorl  staff   42684 Dec  3 18:14 Icon-App-60x60@3x.png
+-rw-r--r--   1 vorl  staff   11682 Dec  3 18:14 Icon-App-76x76@1x.png
+-rw-r--r--   1 vorl  staff   33031 Dec  3 18:14 Icon-App-76x76@2x.png
+-rw-r--r--   1 vorl  staff   37826 Dec  3 18:14 Icon-App-83.5x83.5@2x.png
+-rw-r--r--   1 vorl  staff  264459 Dec  3 20:39 ItunesArtwork@2x.png
+
+./y_project/Base.lproj:
+total 40
+drwxr-xr-x   4 vorl  staff    128 Dec  3 18:15 .
+drwxr-xr-x  18 vorl  staff    576 Dec  6 17:47 ..
+-rw-r--r--@  1 vorl  staff   1745 Dec  3 18:15 LaunchScreen.storyboard
+	com.apple.lastuseddate#PS	   16 
+	com.apple.metadata:kMDLabel_aoakcijnpqsdga2w6xcgbodo6m	   89 
+-rw-r--r--@  1 vorl  staff  13181 Nov 28 10:01 Main.storyboard
+	com.apple.lastuseddate#PS	   16 
+	com.apple.metadata:kMDLabel_aoakcijnpqsdga2w6xcgbodo6m	   89 
+
+./y_project/Sounds:
+total 104
+drwxr-xr-x   3 vorl  staff     96 Nov 15 16:17 .
+drwxr-xr-x  18 vorl  staff    576 Dec  6 17:47 ..
+-rwxr-xr-x   1 vorl  staff  49246 Nov 15 16:17 catch.wav
+
+./y_project/art.scnassets:
+total 560
+drwxr-xr-x   6 vorl  staff     192 Dec  6 17:56 .
+drwxr-xr-x  18 vorl  staff     576 Dec  6 17:47 ..
+-rw-r--r--@  1 vorl  staff    8096 Nov 15 16:17 ball.png
+	com.apple.lastuseddate#PS	    16 
+	com.apple.quarantine	    22 
+-rw-r--r--@  1 vorl  staff  130523 Dec  6 17:44 culture.png
+	com.apple.lastuseddate#PS	    16 
+-rw-r--r--@  1 vorl  staff   73230 Dec  6 17:45 politics.png
+	com.apple.lastuseddate#PS	    16 
+-rw-r--r--   1 vorl  staff   72621 Dec  6 17:45 technology.png
+
+./y_project.xcodeproj:
+total 48
+drwxr-xr-x@  5 vorl  staff    160 Dec  6 17:53 .
+	LastUpgradeCheck	    4 
+	com.apple.lastuseddate#PS	   16 
+drwxr-xr-x  10 vorl  staff    320 Dec  6 17:58 ..
+-rw-------   1 vorl  staff  21031 Dec  6 17:53 project.pbxproj
+drwxr-xr-x@  5 vorl  staff    160 Nov 15 16:17 project.xcworkspace
+	com.apple.lastuseddate#PS	   16 
+drwxr-xr-x   3 vorl  staff     96 Oct 30 17:13 xcuserdata
+
+./y_project.xcodeproj/project.xcworkspace:
+total 8
+drwxr-xr-x@ 5 vorl  staff  160 Nov 15 16:17 .
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x@ 5 vorl  staff  160 Dec  6 17:53 ..
+	LastUpgradeCheck	  4 
+	com.apple.lastuseddate#PS	 16 
+-rw-r--r--  1 vorl  staff  154 Nov 15 16:17 contents.xcworkspacedata
+drwxr-xr-x  3 vorl  staff   96 Nov 15 16:17 xcshareddata
+drwxr-xr-x  3 vorl  staff   96 Oct 30 17:13 xcuserdata
+
+./y_project.xcodeproj/project.xcworkspace/xcshareddata:
+total 8
+drwxr-xr-x  3 vorl  staff   96 Nov 15 16:17 .
+drwxr-xr-x@ 5 vorl  staff  160 Nov 15 16:17 ..
+	com.apple.lastuseddate#PS	 16 
+-rw-r--r--  1 vorl  staff  238 Nov 15 16:17 IDEWorkspaceChecks.plist
+
+./y_project.xcodeproj/project.xcworkspace/xcuserdata:
+total 0
+drwxr-xr-x  3 vorl  staff   96 Oct 30 17:13 .
+drwxr-xr-x@ 5 vorl  staff  160 Nov 15 16:17 ..
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x  3 vorl  staff   96 Dec  3 19:14 vorl.xcuserdatad
+
+./y_project.xcodeproj/project.xcworkspace/xcuserdata/vorl.xcuserdatad:
+total 136
+drwxr-xr-x  3 vorl  staff     96 Dec  3 19:14 .
+drwxr-xr-x  3 vorl  staff     96 Oct 30 17:13 ..
+-rw-r--r--  1 vorl  staff  68449 Dec  3 19:14 UserInterfaceState.xcuserstate
+
+./y_project.xcodeproj/xcuserdata:
+total 0
+drwxr-xr-x  3 vorl  staff   96 Oct 30 17:13 .
+drwxr-xr-x@ 5 vorl  staff  160 Dec  6 17:53 ..
+	LastUpgradeCheck	  4 
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x  4 vorl  staff  128 Oct 30 17:13 vorl.xcuserdatad
+
+./y_project.xcodeproj/xcuserdata/vorl.xcuserdatad:
+total 0
+drwxr-xr-x  4 vorl  staff  128 Oct 30 17:13 .
+drwxr-xr-x  3 vorl  staff   96 Oct 30 17:13 ..
+drwxr-xr-x  3 vorl  staff   96 Nov  9 17:32 xcdebugger
+drwxr-xr-x  3 vorl  staff   96 Dec  3 19:14 xcschemes
+
+./y_project.xcodeproj/xcuserdata/vorl.xcuserdatad/xcdebugger:
+total 8
+drwxr-xr-x  3 vorl  staff   96 Nov  9 17:32 .
+drwxr-xr-x  4 vorl  staff  128 Oct 30 17:13 ..
+-rw-r--r--  1 vorl  staff   91 Nov  9 17:32 Breakpoints_v2.xcbkptlist
+
+./y_project.xcodeproj/xcuserdata/vorl.xcuserdatad/xcschemes:
+total 8
+drwxr-xr-x  3 vorl  staff   96 Dec  3 19:14 .
+drwxr-xr-x  4 vorl  staff  128 Oct 30 17:13 ..
+-rw-r--r--  1 vorl  staff  443 Dec  3 19:14 xcschememanagement.plist
+
+./y_project.xcworkspace:
+total 8
+drwxr-xr-x@  5 vorl  staff  160 Nov 15 16:17 .
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x  10 vorl  staff  320 Dec  6 17:58 ..
+-rw-r--r--   1 vorl  staff  227 Nov 15 16:17 contents.xcworkspacedata
+drwxr-xr-x   3 vorl  staff   96 Nov 15 16:17 xcshareddata
+drwxr-xr-x   3 vorl  staff   96 Nov 12 12:43 xcuserdata
+
+./y_project.xcworkspace/xcshareddata:
+total 8
+drwxr-xr-x  3 vorl  staff   96 Nov 15 16:17 .
+drwxr-xr-x@ 5 vorl  staff  160 Nov 15 16:17 ..
+	com.apple.lastuseddate#PS	 16 
+-rw-r--r--  1 vorl  staff  238 Nov 15 16:17 IDEWorkspaceChecks.plist
+
+./y_project.xcworkspace/xcuserdata:
+total 0
+drwxr-xr-x  3 vorl  staff   96 Nov 12 12:43 .
+drwxr-xr-x@ 5 vorl  staff  160 Nov 15 16:17 ..
+	com.apple.lastuseddate#PS	 16 
+drwxr-xr-x  4 vorl  staff  128 Dec  6 17:58 vorl.xcuserdatad
+
+./y_project.xcworkspace/xcuserdata/vorl.xcuserdatad:
+total 104
+drwxr-xr-x  4 vorl  staff    128 Dec  6 17:58 .
+drwxr-xr-x  3 vorl  staff     96 Nov 12 12:43 ..
+-rw-r--r--  1 vorl  staff  50595 Dec  6 17:58 UserInterfaceState.xcuserstate
+drwxr-xr-x  4 vorl  staff    128 Dec  6 17:53 xcdebugger
+
+./y_project.xcworkspace/xcuserdata/vorl.xcuserdatad/xcdebugger:
+total 40
+drwxr-xr-x  4 vorl  staff    128 Dec  6 17:53 .
+drwxr-xr-x  4 vorl  staff    128 Dec  6 17:58 ..
+-rw-r--r--  1 vorl  staff  12973 Dec  6 17:53 Breakpoints_v2.xcbkptlist
+-rw-r--r--  1 vorl  staff   1376 Nov 26 16:17 Expressions.xcexplist
