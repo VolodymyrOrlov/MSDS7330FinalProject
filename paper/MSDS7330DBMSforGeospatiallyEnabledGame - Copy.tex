@@ -72,6 +72,45 @@ Given the rules, mechanics, and the location-based nature of the game, some data
 	\item Using Location Data. What computations can be done with GPS coordinates to enforce game rules and accomplish game mechanics such as the player interacting with geospatial objects.
 	\item Database Schema. What entities and attributes are necessary to store and what portions of the game may be saved by the player.
 \end{enumerate}
+
+\section{A Database design to support the gameplay}
+
+The important entities that the database must be store are player data, object-category properties and locations, and story-segments, . As developers, we also need to know a player’s score in order to know what story segments the player has earned. Similarly, we need to know what objects have already been collected in order to not allow the player to collect them again. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=2.8in]{imgs/DatabaseSchema.png}
+\caption{Entity Relationship Diagram of Game Database}
+\label{ERD}
+\end{figure}
+
+A list of geospatial points that correspond to viable latitudes and longitudes that can be used for any particular game will be stored separately from the list of geospatial points that are actually available to the player. This allows us to update the list and properties of physical geospatial points without affecting existing games and applications. A diagram of the database schema can be found above in \autoref{ERD}. 
+
+\subsection{Players}
+The UserData table contains login and personal information of all registered players taking part in the game. In the TempLocation table we store the player’s geographic location using the format provided by the PostGIS extension, which is a geographical object (latitude, longitude). We will collect the player's location using the API (see middle layer description). We will not store historical data of a player’s location, but simply update the current location.
+
+ \subsection{Objects}
+The Objects table includes a unique identifier (ObjectID), the object category (culture, economy or technology), and an attribute for the number of points awarded by each object (ObjectBAseScore). The game can run multiple stories, and therefore there’s a variety of objects that appear depending on the Story in which the player is immersed. This is why the StoryID attribute also appears on this table. 
+
+The main mechanism of the game is collecting objects in different locations, which are described in the ObjectLocation table. The ObjectLocationID serves to record all the locations where objects can be collected. The latitude and longitude of the location are stored on this table, in order to match that information with the player’s location.
+
+\subsection{Scores} 
+The database needs to keep the player’s score and link it to the UserID, and this is done in the TotalGameScore table. The table records the score by object category and adds up the total UserScore. 
+
+\subsection{Stories}
+As players make progress through the game, collecting more objects and reaching predefined score thresholds, new segments of the story unfold until the player reaches the end. This information is stored in the Segment Table, which contains the SegmentID, the score Threshold that the user should achieve to unlock the segment, and a text StoryFile that is displayed on the device. 
+
+The user will have several stories to choose from. These are stored in the Story table, which has a unique StoryID identifier along with the StoryName. 
+Finally, in order to keep track of the User’s progress through the strory segments, by relating both entities in the UserDataSegment table. 
+
+One major consideration in choice of database schema is to what extent the game may be housed on the player’s phone and what may be streamed from the central database. The former makes data integrity more feasible while the latter makes the storage of the player’s progress more feasible. For example, knowing what objects the player has already collected entails storing information that depends on both the player base and all of the objects’ geospatial locations. Hence, it merits its own table the size of the number of players times the number of object locations.  As the player base increases and the game is expanded, this table will grow very rapidly in size. However, if the player holds the object locations portion of the database on his or her phone, then the information may simply be stored as an indicator on the player’s downloaded schema. An example of the schema that can be saved on the player's phone lies below in\autoref{ERDUser}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=2.7in]{imgs/MSDS7330_FinalProj_Prelim_ER2_USER.png}
+\caption{ER Diagram of Database on User End}
+\label{ERDUser}
+\end{figure}
 	
 \section{High-level description of the system}
 In order to be able to serve big number of requests in a timely manner and scale well with increasing number of players we need a system that will not only have a well designed, scalable database, but also other components integrated into a single, well thought architecture. Our system is built from 3 major components:
@@ -94,7 +133,7 @@ We want our backend to support large number of requests coming from multiple pla
 We use AWS to host our database. 
 Layout of all three components are represented schematically in \autoref{schema}. 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=2.5in]{imgs/systemschema.png}
 \caption{Schematic layout of major components of the system}
@@ -139,82 +178,42 @@ Based on this assessment, we selected the open-sourced PostgreSQL database, inte
 \item Build custom functions using a language such as Python or R, which will be very useful to program the game requirements, rules and mechanisms into the database. 
 \end{itemize}
 
-\section{A Database design to support the gameplay}
 
-The important entities that the database must be store are player data, object-category properties and locations, and story-segments, . As developers, we also need to know a player’s score in order to know what story segments the player has earned. Similarly, we need to know what objects have already been collected in order to not allow the player to collect them again. 
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=2.8in]{imgs/DatabaseSchema.png}
-\caption{Entity Relationship Diagram of Game Database}
-\label{ERD}
-\end{figure}
-
-A list of geospatial points that correspond to viable latitudes and longitudes that can be used for any particular game will be stored separately from the list of geospatial points that are actually available to the player. This allows us to update the list and properties of physical geospatial points without affecting existing games and applications. A diagram of the database schema can be found above in \autoref{ERD}. 
-
-\subsection{Players}
-The UserData table contains login and personal information of all registered players taking part in the game. In the TempLocation table we store the player’s geographic location using the format provided by the PostGIS extension, which is a geographical object (latitude, longitude). We will collect the player's location using the API (see middle layer description). We will not store historical data of a player’s location, but simply update the current location.
-
- \subsection{Objects}
-The Objects table includes a unique identifier (ObjectID), the object category (culture, economy or technology), and an attribute for the number of points awarded by each object (ObjectBAseScore). The game can run multiple stories, and therefore there’s a variety of objects that appear depending on the Story in which the player is immersed. This is why the StoryID attribute also appears on this table. 
-
-The main mechanism of the game is collecting objects in different locations, which are described in the ObjectLocation table. The ObjectLocationID serves to record all the locations where objects can be collected. The latitude and longitude of the location are stored on this table, in order to match that information with the player’s location.
-
-\subsection{Scores} 
-The database needs to keep the player’s score and link it to the UserID, and this is done in the TotalGameScore table. The table records the score by object category and adds up the total UserScore. 
-
-\subsection{Stories}
-As players make progress through the game, collecting more objects and reaching predefined score thresholds, new segments of the story unfold until the player reaches the end. This information is stored in the Segment Table, which contains the SegmentID, the score Threshold that the user should achieve to unlock the segment, and a text StoryFile that is displayed on the device. 
-
-The user will have several stories to choose from. These are stored in the Story table, which has a unique StoryID identifier along with the StoryName. 
-Finally, in order to keep track of the User’s progress through the strory segments, by relating both entities in the UserDataSegment table. 
-
-One major consideration in choice of database schema is to what extent the game may be housed on the player’s phone and what may be streamed from the central database. The former makes data integrity more feasible while the latter makes the storage of the player’s progress more feasible. For example, knowing what objects the player has already collected entails storing information that depends on both the player base and all of the objects’ geospatial locations. Hence, it merits its own table the size of the number of players times the number of object locations.  As the player base increases and the game is expanded, this table will grow very rapidly in size. However, if the player holds the object locations portion of the database on his or her phone, then the information may simply be stored as an indicator on the player’s downloaded schema. An example of the schema that can be saved on the player's phone lies below in\autoref{ERDUser}. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=2.7in]{imgs/MSDS7330_FinalProj_Prelim_ER2_USER.png}
-\caption{ER Diagram of Database on User End}
-\label{ERDUser}
-\end{figure}
 
 \section{Description of the middle layer API}
 
 We use Python to create and RESTful API that connects the database with the ser interface. This middle layer performs the following operations:
 
 \textbf{Player Registration:} Record user profile data (UserID, name, email address) from the client’s input on the mobile device. 
+
 \textit{Details:}
-@app.route('/api/game/user)
-Input JSON format example: \big\{"userid" : "user01", "firstname" : "Arturo"\big\}
+Example of input in JSON format: \big\{"userid" : "user01", "firstname" : "Arturo"\big\}
 
 
 \textbf{Player State Synchronization:} Based on UserID, provide user data through a response to the client from the database.
+
 \textit{Details:}
-@app.route('/api/game/user/<userid>')
-Input : UserID
-Response JSON format : \big\{"userid" : "user01", "firstname" : "Arturo"\big\}
+Input : UserID, Response in JSON format : \big\{"userid" : "user01", "firstname" : "Arturo"\big\}
 
 \textbf{Player location:} Instantaneously collect the player’s location data (latitude and longitude coordinates), and update this information in the database when the player moves according to the set thresholds (one update every XX).
+
 \textit{Details:}
-@app.route('/api/game/location‘)
-Input JSON format example: \big\{"latitude":  "32.7877", "longitude" : " -96.8062"\big\}
+Example of input in JSON format: \big\{"latitude":  "32.7877", "longitude" : " -96.8062"\big\}
 
 \textbf{List of Objects around the player’s location:} Send a response to the client reporting all objects avaialbe for collection, based on current position within a specified radius.
+
 \textit{Details:}
-@app.route('/api/game/getlist/<userid>/<r>)
-Input : UserID and Radius
-Reponse JSON format : List of all available objects
+Input : UserID and Radius, Response in JSON format : List of all available objects
 
 \textbf{Colission report:} Send a response to the client reporting the game score and revealing new story segments, which are triggered according to the SegmentThreshold parameter in the database. 
+
 \textit{Details:}
-@app.route('/api/game/collection-reg‘)
-Response JSON format : Current Score and Story Segment and story based on score
+Response in JSON format : Current Score and Story Segment and story based on score
 
 \textbf{User score status per Game category:} 
+
 \textit{Details:}
-API - @app.route('/api/game/user-score/<userid>‘)
-Input : UserID
-Response JSON format : ScoreCategory and Current score
+Input : UserID, Response in JSON format : ScoreCategory and Current score
 
 \section{User and Server Interfaces}
 
