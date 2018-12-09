@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS story cascade;
 DROP TABLE IF EXISTS templocation cascade;
 DROP TABLE IF EXISTS totalgamescore cascade;
 DROP TABLE IF EXISTS userdata cascade;
+DROP TABLE IF EXISTS usersegment cascade;
 
 CREATE SCHEMA topology;
 
