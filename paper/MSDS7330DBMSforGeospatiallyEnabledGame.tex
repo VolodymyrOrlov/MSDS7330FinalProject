@@ -67,10 +67,12 @@ The story occurs in a science fiction setting that places the player in the role
 Given the rules, mechanics, and the location-based nature of the game, some data and database design considerations are:
 
 \begin{enumerate}
-	\item Nature of Geospatial Data. Learning data types, how they are stored, and how they may be obtained both from the player and by the player.
-	\item Available DBMS. What databases and existing software packages work well with GPS data and are also capable of implementing game rules.
-	\item Using Location Data. What computations can be done with GPS coordinates to enforce game rules and accomplish game mechanics such as the player interacting with geospatial objects.
-	\item Database Schema. What entities and attributes are necessary to store and what portions of the game may be saved by the player.
+	\item Database Requirements for Working with Geospatial Data: It is necessary to understand data types, how they are stored, and how they may be obtained both from the player and by the player. 
+	\item DBMS Options: It is necessary to survey what database management systems and existing software packages are available that work well with GPS data and are also capable of storing the required tables and enforcing game rules.
+	\item Database Schema: It is imperative to know what entities and attributes are must be stored and what relationships need to be enforced in order to develop the conceptual design for the database.
+	\item Client Side: In order to develop and test a prototype of the game, it is necessary to develop some kind of interface that interacts with the user and allows the user to play the game.
+	\item Back End Services: In addition to the client-side application, it is necessary develop some application that implements the player’s actions and interacts with the database accordingly.
+
 \end{enumerate}
 
 \subsection{Database requirements and selection}
@@ -152,7 +154,7 @@ The important entities that the database must keep are: players, geospatial obje
 \label{ERD}
 \end{figure}
 
-A list of geospatial points that correspond to viable latitudes and longitudes that can be used for any particular game is stored separately from the list of geospatial points that are actually available to the player. This allows us to update the list and properties of physical geospatial points without affecting existing games and applications. A diagram of the database schema can be found above in \autoref{ERD}. 
+A list of geospatial points that correspond to viable latitudes and longitudes that can be used for any particular game is stored separately from the list of geospatial points that are actually available to the player. This allows us to update the list and properties of physical geospatial points without affecting existing games and applications. A diagram of the database schema can be found in \autoref{ERD}. 
 
 \subsubsection*{Players}
 The UserData table contains login and personal information of all registered players taking part in the game. In the TempLocation table we store the player’s geographic location using the format provided by the PostGIS extension, which is a geographical object (latitude, longitude). We collect the player's location using the middle layer. We do keep history of a player’s location, but simply update the current location.
