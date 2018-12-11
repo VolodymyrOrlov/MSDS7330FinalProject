@@ -55,7 +55,7 @@ The game consists of players exploring the real world via augmented reality in s
 \label{Gameplay}
 \end{figure}
 
-The story is a science fiction story that places the player in the role of an explorer. The player finds himself exploring ruins on another world that once housed an advanced civilization and is charged with learning how the beings lived and what caused their disappearance. The player must then find objects, divided into three categories, that will divulge the necessary information about how this lost civilization lived and why it disappeared. Categories consist of Culture, Politics, and Technology and correspond to the nature of the player’s discoveries and tell the story of the civilization in tandem. For example, culture objects reveal how the civilization lived and what cultural tensions were present before they disappeared. Furthermore, the story arc of the civilization’s culture is told independently of the technology and politics story arcs, but with the common overarching plot of the civilization’s demise. An illustration of the story arc concept is presented below in \autoref{Tandem}.
+The story occurs in a science fiction setting that places the player in the role of an explorer. The player finds himself exploring ruins on another world that once housed an advanced civilization and is charged with learning how its members lived and what caused their disappearance. The player must then find objects, divided into three categories, that will divulge the necessary information about how this lost civilization lived and why it disappeared. Categories consist of Culture, Politics, and Technology and correspond to the nature of the player’s discoveries and tell the story of the civilization in tandem. For example, culture objects reveal how the civilization lived and what cultural tensions were present before they disappeared. Furthermore, the story arc of the civilization’s culture is told independently of the technology and politics story arcs, but with the common overarching plot of the civilization’s demise. An illustration of the story arc concept is presented below in \autoref{Tandem}.
 
 \begin{figure}[h]
 \centering
@@ -143,7 +143,7 @@ Layout of all three components are represented schematically in \autoref{schema}
 
 \subsection{Database design to support the gameplay}
 
-The important entities that the database must keep are: player, geospatial objects, stories and story-segments. We also need to know a player’s score in order to know what story segments the player has earned. Similarly, we need to know what objects have already been collected in order to not allow the player to collect them again. 
+The important entities that the database must keep are: players, geospatial objects, stories and story-segments. We also need to know a player’s score in order to know what story segments the player has earned. Similarly, we need to know what objects have already been collected in order to not allow the player to collect them again. 
 
 \begin{figure}[h]
 \centering
@@ -165,7 +165,7 @@ The main mechanism of the game is collecting objects in different locations, whi
 \subsubsection*{Scores} 
 The database needs to keep the player’s score and link it to the UserID, and this is done in the TotalGameScore table. The table records the score by object category and adds up the total UserScore. 
 
-\subsubsection*{Stories}
+\subsubsection*{Stories and Story Segments}
 As players make progress through the game, collecting more objects and reaching predefined score thresholds, new segments of the story unfold until the player reaches the end. This information is stored in the Segment Table, which contains the SegmentID, the score Threshold that the user should achieve to unlock the segment, and a text StoryFile that is displayed on the device. 
 
 The user will have several stories to choose from. These are stored in the Story table, which has a unique StoryID identifier along with the StoryName. 
