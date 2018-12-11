@@ -38,7 +38,7 @@ The success of Pokémon Go\footnote[1]{Pokémon Go Wikipedia page: https://goo.g
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
-Location based apps and services are becoming more and more popular. The game Pokémon Go, in particular, has gained over 44 million users and additionally incorporates augmented reality. We developed a database that can collect, store and aid in processing information for a game where players are collecting items in different tourist destinations to earn points. The game consist of players moving around the real world and collecting objects that gradually reveal parts of a story. The data is collected from a user interface operating on their cellphones. The emphasis of this work is to design a system that can efficiently collect and store geospatially enabled data, and use a database structure to manage the game rules and possible interactions among players. 
+Location based apps and services are becoming more and more popular. The game Pokémon Go, in particular, has gained over 44 million users and additionally incorporates augmented reality. We developed a database that can collect, store and aid in processing information for a game where players are collecting items in different tourist destinations to earn points. We called our game StoryPods. The game consist of players moving around the real world and collecting objects that gradually reveal parts of a story. The data is collected from a user interface operating on their cellphones. The emphasis of this work is to design a system that can efficiently collect and store geospatially enabled data, and use a database structure to manage the game rules and possible interactions among players. 
 
 \subsection{Previous work related to the problem}
 An interesting paper by Chulmo Koo and others investigate relationship between geospatially enabled mobile game and destination satisfaction \cite{destination-engagement}. Besides, some authors argue that location-based games are positively associated with a set of beneficial health behaviors \cite{pokemon-motivation}. We found it interesting that a game can have a positive effect on tourism and person’s wellness and would like to extend research in this area.  
@@ -150,7 +150,7 @@ The important entities that the database must keep are: players, geospatial obje
 \begin{figure}[h]
 \centering
 \includegraphics[width=2.8in]{imgs/DatabaseSchema.png}
-\caption{Entity Relationship Diagram of Game Database}
+\caption{Entity Relationship Diagram of StoryPods}
 \label{ERD}
 \end{figure}
 
@@ -263,6 +263,83 @@ L. Lehman, "Location-based Mobile Games" Technical University of Berlin, unpubli
 Ramsey, Pau (2017)l. Scaling PostgreSQL and PostGIS, Dec 2017. URL: http://blog.cleverelephant.ca/2017/12/postgis-scaling.html
 
 \end{thebibliography}
+
+\appendices
+
+\section{StoryPods Script}
+\label{StoryPods Script}
+
+\subsection{Culture Line}
+
+\subsubsection*{5 Points}
+The abandoned city appears to have been well preserved due to its massive walls. This is excellent as it should also preserve all the dwellings, tools, art, and such within. No city of comparable size or as well preserved can be found anywhere near this place. In fact, the environment is so hostile that we would never have thought that this planet sustained life, much less complex civilizations. 
+
+It is to think that not only were we able to find intelligent life but that we may be able to figure out how they lived. However, we must be wary that cultures that grow in isolation often fail to resemble the people and cultures everywhere else. Every preliminary conclusion must be taken with a grain of salt until we have more information. 
+
+\subsubsection*{10 Points}
+All the remains in the city appear to have the same aesthetic of jagged surfaces made from the same white material. Back on earth, cities tend to have vistas that vary according to the time they were constructed or the person who ordered their construction. Buildings, cars, lights, lampposts, and walkways all vary by when they were built or who was hired to build them. Most objects and buildings here look the same. Everything appears to have the same white and clean, if not Spartan look to them. This somewhat implies a single dominant culture, or at least that someone wants to make it look that way. After all, we don’t know if this is a genuine city that housed civilians or some kind of military or commercial outpost.  Perhaps this city had a purpose.
+
+\subsubsection*{15 Points}
+We have yet to find a single grave, or any kind of organic material, which is going to make it really difficult to learn about these beings’ biology and anatomy. It’s also going to be difficult to know exactly how many beings actually lived here at a time without some way to gauge birthrates, death rates or longevity. 
+
+However, we must be wary not to blinded by earth bias. we don’t know if this implies longevity or perhaps a particular form of disposing of the dead, like cremation. We can’t even assume that the beings were a traditional form of life. We can only lament that they have all disappeared and have not even left remains for us to analyze. Hopefully, they left peacefully and voluntarily. 
+
+\subsubsection*{20 Points}
+Everything small enough to be picked up and held has a generally pleasant feel to it, at least by the standards on earth. Some of that could be the varying gravity, but this is also in spite of the larger size of everything. This craftsmanship present in our technological samples contrasts with the utter lack of public displays of art anywhere in the city. The ubiquity of the material implies that it has a utilitarian purpose, opposed to cultural or artistic one. Case in point, only military installations and penal colonies back on earth tend to have everything be the same color while having little to no unnecessary decorations. Going on first impressions: the beings appear to be far more motivated by utility and uniformity than by artistry and variety.
+
+Then again, maybe their eyes work differently from ours. Maybe what they can see through their eyes is very different than what we can see through ours.  Let’s hope that this is indeed a peaceful, civilian outpost and that we are using our limited experience to assume too much. If it isn’t a civilian settlement, however, we are likely to get a very biased look at the beings’ culture. 
+
+\subsubsection*{25 Points}
+The team is waiting for permission to go underground and explore what may be beneath the city. We shouldn’t get our hopes up, as the request may not get approved and the city may not have much of an underground portion at all. In the chance that there were an underground portion of the city, we would have a second chance to find remains, waste, or some indicator of what food the inhabitants ate. There’s even a tiny possibility that someone is still alive but hiding beneath the city.
+
+This is all an incredibly motivating prospect, since conclusions about how the beings lived have been incredibly limited without having decoded communiques. There are linguists, for example, who will be crucial in understanding the beings’ language but currently have very little to do. In the meantime, they can aid the xenoarchaeologists in a dig. Is there something they are afraid we are going to discover?
+
+\subsection{Politics Line}
+
+\subsubsection*{5 Points}
+This is the only city of this size that can be seen anywhere on the planet. There is definitely evidence that there were other cities and settlements on this planet, but this is by far the biggest that we’ve been able to find. It’s also unusual by earth standards in that the largest cities on earth tend to be near water or on important trade routes. This city, however, is tucked away on arid steppes. The beings that built this city definitely went out of their way to isolate themselves from their environment, from valuable resources, and from others. As such, one would think that this should be one of the smaller cities on the planet. Since, nothing this big is ever built without a purpose. It makes me wonder just what the city is for.
+
+\subsubsection*{10 Points}
+No statues have survived. If there were statues or monuments, we could have gotten a sense of what or who the beings idolized. We might have even been able to know what the beings looked like. With no statues or monuments, however, we can’t necessarily conclude that they did not have any kings or idols. 
+
+The city’s layout is also unusual in that there’s a doorway in the center. It’s a slanted doorway that just seems to lead into the ground. Ultrasounds confirm it doesn’t actually lead anywhere, which is really strange. On that note, ultrasounds also confirm that other parts of the city do have an underground network. So, we shouldn’t  jump to conclusions as we are just learning about this civilization, but a doorway that leads into directly into the ground at the center of the city is really unusual.
+
+Also, it makes sense that a city confined by the walls has to get creative when expanding, but why did these beings choose to build down when they could have built up?
+
+\subsubsection*{15 Points}
+While the city has massive walls protecting it from without, it’s unusual to see a city of this size that has walls protecting it from the outside, but no second set of walls on the inside. Back on earth, most cities that feel threatened enough to build a set of giant walls, and have the technological and economic acumen to do so, rarely build just the one set. Come to think of it, once a certain amount of technological sophistication is achieved civilizations on earth tended to forget about walls and go with less visible and less intrusive but more sophisticated means of defense such as radar. As intruders, we should definitely be careful. Let’s hope the walls are just symbolic.
+
+\subsubsection*{20 Points}
+Those on the team who would like to study more complex topics like politics and culture have submitted a request to start exploring beneath the city. Mostly, that’s because nobody has been able to find an entry-way towards the underground and so some are suggesting creating one ourselves. Unfortunately, it is still not obvious what exactly is a door in this place, and even then, the city is still without power. Right now, we’re stuck sightseeing on the surface where there are no advertisements, or graffiti, or any attempts at mass public communication. Until we start receiving decoded and translated data, our best chance to study this place’s social dynamics is to have access to the actual dwellings, above or below ground.
+
+P.S. It’s ironic to be lectured by engineers, who regularly learn about things by taking them apart, on the virtues of preserving the thing you are trying to understand.
+
+\subsubsection*{25 Points}
+Safety concerns are dominating the consideration for digging underground. While it appears that nobody else is here, we don’t know that to be true with 100\% certainty. Even if that may be true, we also don’t know if the city is still capable of communicating or transmitting information to anyone else. If it is, our intrusion has the possibility of being interpreted as an act of aggression. Given the fortress-like structure of the city and the mounting evidence that this could be some kind of military or penal colony, then our actions also have the potential to be construed as a declaration of war on behalf of all of humanity. 
+
+However, the city/fortress being entirely deserted is still the most likely scenario. Also, the possibility of a miscommunication with other intelligent life in their sovereign space and the danger that comes with that should have been considered begore embarking on the mission at all, as this possibility is always present when communicating with intelligent life. If the leadership really believed we were in any immediate danger the we should be given orders to leave. Hopefully, that won’t turn out to be the case.  
+
+\subsection{Technology Line}
+
+\subsubsection*{5 Points}
+
+We are inside the city’s walls now. We had to be airlifted into the center of the city because we couldn’t seem to find an entrance through the city’s enormous walls. Everything inside looks very advanced, though it’s hard to tell. We won’t know anything for sure until we bring objects back to the lab for analysis. Our instructions are to bring back anything that looks out of place so as to not upset evidence that may tell us how these beings lived. We have strict instructions, however, to not bring back any object that looks like an applicator, which means anything that looks like it’s meant to be pointed at something. Right now, we can’t tell the difference between a camera and a gun. As a safety rule: if it looks like it’s meant to be pointed at something then we should wait until we better understand this technology in general before we even begin to analyze it. 
+
+\subsubsection*{10 Points}
+Looks like binary is almost universal. Of what we’ve been able to bring back to the lab, most of what we’re studying operates on 1 or 0 transistors like on earth. There are some objects, however, that we can’t seem to make sense of but they do look like they would be useful. Case in point, the only thing we a screen that we brought back has a very parsimonious interior. It’s exciting to imagine what this advanced tech can teach us about computing, especially since it’s likely to be compatible with the ‘antiquated’ transistor technology from back home.
+
+On a similar note, we haven’t been able to find anything that resembles a car or a ship. It makes you wonder how they got in or out.
+
+\subsubsection*{15 Points}
+Carbon dating shows that all of the objects that appear advanced are somewhat young. The objects that still rely on transistors, however, vary greatly in age. More precisely, the amount of C14 in the atmosphere is fairly high, but the older bits of tech have an unusually low C14 to C12 ratio. So, either the tech did not come from this planet with this atmosphere, or it was built a very long time ago, assuming atmospheres take a very long time to change. Is it possible that this civilization is like us and encountered an advanced civilization in the past? The tech being extraterrestrial would explain the substantial difference in C14 ratios. Of course, extinction via environmental destruction is still a possibility, but that would not be a very satisfying explanation as to why this is the only place left.
+
+\subsubsection*{20 Points}
+A few things are holding up our progress in analyzing the tech. We’re trying to first analyze the tech in some theoretically noninvasive way before trying taking it apart or physically altering it. We’ve tried millimeter scanners, electron spectroscopy, LiDAR, and hyperspectral imaging, but all of them are indicating that these objects are not even there. Billions of dollars in scanning and detection technology can’t seem to outdo the human eye, at least in proving that these objects exist. Additionally, everything in the city from the tallest buildings to hand held devices is covered in the same material. It’s possible the entire city is resistant to being electronically detected, which is all the more baffling given the lack of other signs of intelligent life on this planet. After all, why hide from electronic detection if there are no other electronics anywhere on the planet?
+
+\subsubsection*{25 Points}
+Thinking about it some more, if the city was designed to be undetectable by electronic scanning, then the ultrasounds are not going to be reliable. Ultrasounds have only been able to detect some empty spaces beneath the city that are very unlikely to be natural.  We have no way of knowing how much more of the city is below ground electronically. We would have to go below ground in person to know for sure. 
+
+While many feel it would be prudent to wait until we understand the technology better, others are getting impatient with the slow progress in decoding the beings’ technology. The pretext of safety may be phony, however.  Having learned of the possibility of an underground component for any city, it’s logical that we intend to eventually explore the underground to learn as much as we can. It’s a question of when. So, it makes one wonder if the mission objective has changed now that we have found technology that can be incorporated into our  military back home. 
 
 \end{document}
 
