@@ -116,7 +116,7 @@ Based on this assessment, we selected the open-sourced PostgreSQL database, inte
 \section{Description of the system}
 
 \subsection{High-level system overview}
-In order to be able to serve big number of requests in a timely manner and scale well with increasing number of players we need a system that will not only have a well designed, scalable database, but also other components integrated into a single, well thought architecture. Our system is built from 3 major components:
+In order to be able to serve big number of requests in a timely manner and scale well with increasing number of players we need a system that will not only have a well designed, scalable database, but also other components integrated into a single, well thought architecture. Layout of all components of our system are represented schematically in \autoref{schema}.  Our system is built from 3 major parts:
 
 \begin{enumerate}
   \item Client-side application: We decided to support 2 major platforms that got widespread adoption: Android and iOS. For the proof-of-concept we focused on iOS. 
@@ -131,10 +131,9 @@ We use following communication protocols between these components:
 \item SQL. We use relational database and SQL over Application Layer to transform and query our data. 
 \end{enumerate}
 
-On the client side we use Apple’s Core Location Framework to collect longitude and latitude of a player and Apple’s ARKit to place objects around player. We calculate bearing and distance between player and a object to place objects around given user. To uniquely identify each player we use Vendor ID.
-We want our backend to support large number of requests coming from multiple players. To achieve that we use multiple copies of the identical services capable to scale up or down depending on the level of load. Luckily we do not have to think about scalability properties of our hardware since we run our services in AWS Cloud on EC2 virtual instances.  To spread load across multiple copies of the backend service we use AWS load balancer that distributes client’s requests in a round-robin fashion between EC2 instances. 
-We use AWS to host our database. 
-Layout of all three components are represented schematically in \autoref{schema}. 
+On the client side we have an iOS application that collects longitude and latitude of a smartphone and places objects around player. We calculate bearing, the horizontal angle between the direction of an object and player and distance between player and an object to place stories around given location. 
+
+We want our backend to support large number of requests coming from multiple players. To achieve that we host our middle layer and our database on  Amazon Web Services (AWS).  We can use multiple copies of the identical service to scale our system up or down horizontally depending on the level of load.  To spread load across multiple copies of the service we can use AWS load balancer that distributes client’s requests in a round-robin fashion between instances. 
 
 \begin{figure}[h]
 \centering
